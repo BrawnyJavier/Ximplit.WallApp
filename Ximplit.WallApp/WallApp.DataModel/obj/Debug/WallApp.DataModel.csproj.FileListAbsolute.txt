@@ -1,0 +1,14 @@
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\WallApp.DataModel.dll.config
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\WallApp.DataModel.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\WallApp.DataModel.pdb
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\EntityFramework.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\WallApp.classes.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\WallApp.classes.pdb
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\EntityFramework.xml
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.pdb
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.InitMigration.resources
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.csproj.GenerateResource.Cache

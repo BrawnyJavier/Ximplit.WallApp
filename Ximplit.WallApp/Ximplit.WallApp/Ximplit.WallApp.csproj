@@ -246,7 +246,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Services\BasicAuthAttribute.cs" />
     <Compile Include="Services\IXimplitWallAppIdentityService.cs" />
+    <Compile Include="Services\WallAppSecurity.cs" />
     <Compile Include="Services\XimplitWallAppIdentityService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -322,6 +324,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WallApp.classes\WallApp.classes.csproj">
+      <Project>{150996d8-f846-4e62-ae63-d92f3b5266f3}</Project>
+      <Name>WallApp.classes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WallApp.DataModel\WallApp.DataModel.csproj">
+      <Project>{fd3c9da5-db02-4407-980c-9485aab3ae31}</Project>
+      <Name>WallApp.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

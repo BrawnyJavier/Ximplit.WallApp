@@ -1,0 +1,4 @@
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.classes\bin\Debug\WallApp.classes.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.classes\bin\Debug\WallApp.classes.pdb
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.classes\obj\Debug\WallApp.classes.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.classes\obj\Debug\WallApp.classes.pdb
