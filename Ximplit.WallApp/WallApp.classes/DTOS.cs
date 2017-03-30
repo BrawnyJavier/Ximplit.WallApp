@@ -13,4 +13,11 @@ namespace WallApp.classes
         public string content { get; set; }
         public string AuthorUserName { get; set; }
     }
+    public class CommentDTO
+    {
+        public int CommentID { get; set; }
+        public string Content { get; set; }
+        public int ParentCommentID { get; set; }
+        public string AuthorUsename { get; set; }
+    }
 }

@@ -16,6 +16,8 @@ namespace WallApp.classes
         public string LastName { get; set; }
         [Required]
         public string Password { get; set; }
+        [Required]
+        public string Email { get; set; }
     }
     public class Post
     {
@@ -33,6 +35,10 @@ namespace WallApp.classes
         public int CommentID { get; set; }
         [Required]
         public string Content { get; set; }
+        // If the comment is a reply of another
         public Comment ParentComment { get; set; }
+        // The list of replies this comment can have
+        public List<Comment> childComments { get; set; }
+        public User CommentAuthor { get; set; }
     }
 }

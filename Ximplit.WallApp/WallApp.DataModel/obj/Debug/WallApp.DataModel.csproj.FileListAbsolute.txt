@@ -14,3 +14,4 @@ C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataMod
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.csproj.GenerateResource.Cache
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.AddingPostsandCommentstothemodel.resources
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.correctiononposts.resources
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.addingemailvaluetousersschema.resources
