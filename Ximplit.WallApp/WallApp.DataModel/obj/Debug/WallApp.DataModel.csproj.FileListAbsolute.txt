@@ -12,3 +12,4 @@ C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataMod
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.pdb
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.InitMigration.resources
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.csproj.GenerateResource.Cache
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.AddingPostsandCommentstothemodel.resources
