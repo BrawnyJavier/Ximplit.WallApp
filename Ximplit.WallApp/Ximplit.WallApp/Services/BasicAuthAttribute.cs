@@ -12,7 +12,7 @@ using System.Security.Principal;
 
 namespace Ximplit.WallApp.Services
 {
-     public class BasicAuthAttribute : AuthorizationFilterAttribute
+    public class BasicAuthAttribute : AuthorizationFilterAttribute
     {
         public override void OnAuthorization(HttpActionContext actionContext)
         {
@@ -34,8 +34,7 @@ namespace Ximplit.WallApp.Services
                     // We set the identity for the current thread with our authentified Username
                     // No roles implemented yet
                     Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(Username), null);
-                
-}
+                }
                 else
                 {
                     actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);

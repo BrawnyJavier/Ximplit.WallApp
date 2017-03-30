@@ -14,6 +14,23 @@ namespace Ximplit.WallApp.Controllers.API
 {
     public class UsersController : ApiController
     {
+        public bool Login(string credentials)
+        {
+            try
+            {
+                string[] Credentials = credentials.Split(':');
+                string username = Credentials[0];
+                string password = Credentials[1];
+                using (var _context = new WallAppContext())
+                {
+                    return _context.Users.Any(user =>
+                 user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
+                 && user.Password == password
+                 );
+                }                
+            }
+            catch (Exception) { return false; }
+        }
 
         public IEnumerable<object> Get()
         {
@@ -46,6 +63,7 @@ namespace Ximplit.WallApp.Controllers.API
         {
             if (ModelState.IsValid)
             {
+                // User user = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(val.ToString());
                 using (var _context = new WallAppContext())
                 {
                     _context.Users.Add(user);

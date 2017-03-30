@@ -14,20 +14,13 @@ namespace Ximplit.WallApp.Services
         {
             using (var _context = new WallAppContext())
             {
-                //var UserToLog =
-                //_context.Users.Where(user =>
-                //user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
-                //&& user.Password == password
-                //).FirstOrDefault();
-                // if (UserToLog.Password.)
-               return _context.Users.Any(user =>
-                user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
-                && user.Password == password
-                );
-                //Thread.CurrentPrincipal.Identity.
+
+                return _context.Users.Any(user =>
+                 user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
+                 && user.Password == password
+                 );
 
             }
-            return false;
         }
     }
 }

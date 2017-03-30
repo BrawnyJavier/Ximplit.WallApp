@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallApp.classes", "WallApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallApp.DataModel", "WallApp.DataModel\WallApp.DataModel.csproj", "{FD3C9DA5-DB02-4407-980C-9485AAB3AE31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{9041A97D-519B-465B-AD5B-16513BC7FDD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FD3C9DA5-DB02-4407-980C-9485AAB3AE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD3C9DA5-DB02-4407-980C-9485AAB3AE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD3C9DA5-DB02-4407-980C-9485AAB3AE31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9041A97D-519B-465B-AD5B-16513BC7FDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9041A97D-519B-465B-AD5B-16513BC7FDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9041A97D-519B-465B-AD5B-16513BC7FDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9041A97D-519B-465B-AD5B-16513BC7FDD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
