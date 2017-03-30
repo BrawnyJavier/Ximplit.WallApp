@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201703301402356_Adding Posts and Comments to the model.Designer.cs">
       <DependentUpon>201703301402356_Adding Posts and Comments to the model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703301415067_correction on posts.cs" />
+    <Compile Include="Migrations\201703301415067_correction on posts.Designer.cs">
+      <DependentUpon>201703301415067_correction on posts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703301402356_Adding Posts and Comments to the model.resx">
       <DependentUpon>201703301402356_Adding Posts and Comments to the model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703301415067_correction on posts.resx">
+      <DependentUpon>201703301415067_correction on posts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

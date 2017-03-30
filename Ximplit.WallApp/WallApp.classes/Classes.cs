@@ -21,13 +21,17 @@ namespace WallApp.classes
     {
         [Key]
         public int PostId { get; set; }
+        [Required]
         public string title { get; set; }
-              public User Author { get; set; }
+        [Required]
+        public string content { get; set; }
+        public User Author { get; set; }
     }
     public class Comment
     {
         [Key]
         public int CommentID { get; set; }
+        [Required]
         public string Content { get; set; }
         public Comment ParentComment { get; set; }
     }
