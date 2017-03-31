@@ -1,131 +1,210 @@
-﻿<div class="container-fluid" style="padding-right: 15px;  padding-left: 15px;  margin-right: auto;  padding:0; margin-left: auto;">
-    <div class="col-lg-4">
-        <div class="row">
-            <div class="card">
-                <img class="img-responsive" src="../Content/Images/HTML/Index/logor.png" />
+﻿<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="../Content/CSS/Feed.css" rel="stylesheet">
+<div class="container bootstrap snippet">
+    <div class="row">
+        <div class="panel">
+            <div class="cover-photo">
+                <div class="fb-timeline-img">
+                    <img src="../Content/Images/HTML/Feed/cover.png" alt="">
+                </div>
+              
             </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <h5 style="color:rgb(255, 106, 0)">&nbsp;Publicar entrada<i class="fa fa-pencil-square-o pull-right"></i></h5>
-                <textarea class="materialize-textarea" id="comment" style="width:100%; border:none; border-radius:5px; margin-top:5px; margin-left:5px; margin-right:5px; max-width:98%;" placeholder="¿Qué estás pensando?"></textarea>
-                <div class="pull-right">
-                    <button class="btn waves-effect waves-light blue" id="PublishEntryBtn" name="action">
-
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-                <div class="card-action">
-
-                </div>
+            <div class="panel-body">
+                
             </div>
         </div>
 
-    </div>
-    <div class="col-lg-7 col-xs-12 post col-sm-9" style="margin-left:0; margin-right:0; padding:0" id="Content">
-        <!-- Card Projects -->
-        <div class="col-md-12">
-            <div class="card" style="margin-top:20px;">
-                <hr style="margin-top:6px; margin-bottom:3px;" />
-                <div>
-                    <h3 style="color:rgb(255, 106, 0);">&nbsp;&nbsp;Titulo<font size="5" class="pull-right">Autor&nbsp;&nbsp;</font></h3>
+        <div class="panel profile-info">
+            <form>
+                <textarea class="form-control input-lg p-text-area" rows="2" placeholder="¿Qué estás pensando?"></textarea>
+            </form>
+            <footer class="panel-footer">
+                <button type="button" class="btn btn-info pull-right">Post</button>
+                <ul class="nav nav-pills">
+                    <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
+                    <li><a href="#"><i class="fa fa-camera"></i></a></li>
+                    <li><a href="#"><i class="fa fa-film"></i></a></li>
+                    <li><a href="#"><i class="fa fa-microphone"></i></a></li>
+                </ul>
+            </footer>
+        </div>
+
+        <div class="panel">
+            <div class="panel-body">
+                <div class="fb-user-thumb">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="">
                 </div>
-                <!--<a href="Post.html"> <h2 style="color:rgb(255, 106, 0);" class="text-center">Titulo</h2></a>-->
-                <hr style="margin-top:6px; margin-bottom:3px;" />
-                <div class="well">
-                    sfkdvbjsd
-                    sdvkkjndsjlkvad'
-                    lv;'adkvladvlkadnvljdnalvnadklnvvkaddsn vojabdnuiccbnaasd
-                    mcnaduijcnuadjkmxcnuisdjksmxcnusdj
+                <div class="fb-user-details">
+                    <h3><a href="#" class="#">Margarita Elina</a></h3>
+                    <p>7 minutes ago near Alaska, USA</p>
+                </div>
+                <div class="clearfix"></div>
+                <p class="fb-user-status">
+                    John is world famous professional photographer.  with forward thinking clients to create beautiful, honest and amazing things that bring positive results. John is world famous professional photographer.  with forward thinking clients to create beautiful, honest and amazing things that bring positive results.
+                </p>
+                <div class="fb-status-container fb-border">
+                    <div class="fb-time-action">
+                        <a href="#" title="Like this">Like</a>
+                        <span>-</span>
+                        <a href="#" title="Leave a comment">Comments</a>
+                        <span>-</span>
+                        <a href="#" title="Send this to friend or post it on your time line">Share</a>
+                    </div>
                 </div>
 
-                <!--<div class="card-action">
-                    <i class="fa fa-thumbs-o-up fa-2x" style="color:rgb(21, 185, 10)"></i>
-                    <i class="fa fa-thumbs-o-down  fa-2x" style="margin-left:10px; color:rgb(255, 0, 0)"></i>
-                    <i class="fa fa-comment-o fa-2x" style="margin-left:10px;"></i>
-                    <div class="pull-right">
-                        <i class="fa fa-facebook-square fa-2x" style="margin-right:10px;"></i>
-                        <i class="fa fa-share-alt fa-2x"></i>
+
+                <div class="fb-status-container fb-border fb-gray-bg">
+                    <div class="fb-time-action like-info">
+                        <a href="#">Jhon Due,</a>
+                        <a href="#">Danieal Kalion</a>
+                        <span>and</span>
+                        <a href="#">40 more</a>
+                        <span>like this</span>
                     </div>
-                </div>-->
-                <div class="row">
-                    <!--Coments-->
-                    <div class="col-lg-12">
-                        <h5 style="color:rgb(255, 106, 0)">Comentarios</h5>
-                    </div>
-                    <div class="row" style="padding:0">
-                        <!-- Comentarios BOX -->
-                        <div class="col-md-12" style="padding:0;">
-                            <div class="card">
-                                <input class="materialize-textarea" id="comment" style="width:100%; border:none; border-radius:5px; margin-top:5px; margin-left:5px; margin-right:5px; max-width:98%;" placeholder="Escribe un comentario...">
 
-                                <div class="pull-right">
-                                    <button class="btn waves-effect waves-light blue" type="submit" name="action">
-
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </div>
-                                <div style="height:auto" class="card-action">
-
-                                </div>
+                    <ul class="fb-comments">
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Jhone due</a>
+                                <span> is world famous professional photographer.  with forward thinking clients to create beautiful, </span>
+                                <p>40 minutes ago - <a href="#" class="like-link">Like</a></p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="panel panel-white post panel-shadow">
-                            <div class="post-footer">
-                                <ul class="comments-list">
-                                    <li class="comment">
-                                        <a class="pull-left" href="#">
-                                            <img class="avatar" src="../Content/DemoFotos/franyy.jpg" alt="avatar">
-                                        </a>
-                                        <div class="comment-body">
-                                            <div class="comment-heading">
-                                                <h4 class="user">Franyer Jerez</h4>
-                                                <h5 class="time">5 minutes ago</h5>
-                                            </div>
-                                            <p>Soy test :/</p>
-                                            <div style="margin-top:-3px">
-                                                <i class="fa fa-thumbs-o-up "></i>
-                                                <i class="fa fa-thumbs-o-down"></i>
-                                                <i class="fa fa-reply"></i>
-                                            </div>
-                                        </div>
-                                        <ul class="comments-list">
-                                            <li class="comment">
-                                                <a class="pull-left" href="#">
-                                                    <img class="avatar" src="../Content/DemoFotos/bj.jpg" alt="avatar">
-                                                </a>
-                                                <div class="comment-body">
-                                                    <div class="comment-heading">
-                                                        <h4 class="user">El Papaupa</h4>
-                                                        <h5 class="time">3 minutes ago</h5>
-                                                    </div>
-                                                    <p>Ya lo sabiamos hahahaha</p>
-                                                </div>
-                                            </li>
-                                            <li class="comment">
-                                                <a class="pull-left" href="#">
-                                                    <img class="avatar" src="../Content/DemoFotos/16298862_10208155452712681_3012806415446232154_n.jpg" alt="avatar">
-                                                </a>
-                                                <div class="comment-body">
-                                                    <div class="comment-heading">
-                                                        <h4 class="user">Mami de francisco</h4>
-                                                        <h5 class="time">3 minutes ago</h5>
-                                                    </div>
-                                                    <p>Ok, cool.</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Tawseef</a>
+                                <span> is world famous professional photographer.  with forward thinking clients to create beautiful, </span>
+                                <p>34 minutes ago - <a href="#" class="like-link">Like</a></p>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar4.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Jhone due</a>
+                                <span> is world famous professional photographer.   </span>
+                                <p>15 minutes ago - <a href="#" class="like-link">Like</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar5.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Tawseef</a>
+                                <span> thinking clients to create beautiful world famous professional photographer.  </span>
+                                <p>2 minutes ago - <a href="#" class="like-link">Like</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar8.png" alt="">
+                            </a>
+                            <div class="cmt-form">
+                                <textarea class="form-control" placeholder="Write a comment..." name=""></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
                 </div>
             </div>
-            <hr />
+        </div>
+        <hr />
+        <div class="panel">
+            <div class="panel-body">
+                <div class="fb-user-thumb">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                </div>
+                <div class="fb-user-details">
+                    <h3><a href="#" class="#">Margarita Elina</a></h3>
+                    <p>7 minutes ago near Alaska, USA</p>
+                </div>
+                <div class="clearfix"></div>
+                <p class="fb-user-status">
+                    John is world famous professional photographer.  with forward thinking clients to create beautiful, honest and amazing things that bring positive results. John is world famous professional photographer.  with forward thinking clients to create beautiful, honest and amazing things that bring positive results.
+                </p>
+                <div class="fb-status-container fb-border">
+                    <div class="fb-time-action">
+                        <a href="#" title="Like this">Like</a>
+                        <span>-</span>
+                        <a href="#" title="Leave a comment">Comments</a>
+                        <span>-</span>
+                        <a href="#" title="Send this to friend or post it on your time line">Share</a>
+                    </div>
+                </div>
+
+
+                <div class="fb-status-container fb-border fb-gray-bg">
+                    <div class="fb-time-action like-info">
+                        <a href="#">Jhon Due,</a>
+                        <a href="#">Danieal Kalion</a>
+                        <span>and</span>
+                        <a href="#">40 more</a>
+                        <span>like this</span>
+                    </div>
+
+                    <ul class="fb-comments">
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Jhone due</a>
+                                <span> is world famous professional photographer.  with forward thinking clients to create beautiful, </span>
+                                <p>40 minutes ago - <a href="#" class="like-link">Like</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Tawseef</a>
+                                <span> is world famous professional photographer.  with forward thinking clients to create beautiful, </span>
+                                <p>34 minutes ago - <a href="#" class="like-link">Like</a></p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar4.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Jhone due</a>
+                                <span> is world famous professional photographer.   </span>
+                                <p>15 minutes ago - <a href="#" class="like-link">Like</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar5.png" alt="">
+                            </a>
+                            <div class="cmt-details">
+                                <a href="#">Tawseef</a>
+                                <span> thinking clients to create beautiful world famous professional photographer.  </span>
+                                <p>2 minutes ago - <a href="#" class="like-link">Like</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="cmt-thumb">
+                                <img src="http://bootdey.com/img/Content/avatar/avatar8.png" alt="">
+                            </a>
+                            <div class="cmt-form">
+                                <textarea class="form-control" placeholder="Write a comment..." name=""></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<script src="../Content/JS/HTML/Feed.js"></script>

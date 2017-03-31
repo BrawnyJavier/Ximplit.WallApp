@@ -265,6 +265,7 @@
     <Content Include="Content\CSS\bootstrap.min.css" />
     <Content Include="Content\CSS\Cards.css" />
     <Content Include="Content\CSS\Comments.css" />
+    <Content Include="Content\CSS\Feed.css" />
     <Content Include="Content\CSS\imgUpload.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\materialize.min.css" />
@@ -277,6 +278,7 @@
     <Content Include="Content\DemoFotos\bj.jpg" />
     <Content Include="Content\DemoFotos\franyy.jpg" />
     <Content Include="Content\Images\a8y4pNe_460s.jpg" />
+    <Content Include="Content\Images\HTML\Feed\cover.png" />
     <Content Include="Content\Images\HTML\Index\9test.jpg" />
     <Content Include="Content\Images\HTML\Index\fulllogo.png" />
     <Content Include="Content\Images\HTML\Index\fulllogo.svg" />
