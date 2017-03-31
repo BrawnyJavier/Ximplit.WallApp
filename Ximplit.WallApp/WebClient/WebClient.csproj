@@ -136,6 +136,7 @@
     <Content Include="Content\Images\m.jpg" />
     <Content Include="Content\JS\autosize.js" />
     <Content Include="Content\JS\bootstrap.min.js" />
+    <Content Include="Content\JS\HTML\Login.js" />
     <Content Include="Content\JS\HTML\Feed.js" />
     <Content Include="Content\JS\HTML\Main.js" />
     <Content Include="Content\JS\Index.js" />

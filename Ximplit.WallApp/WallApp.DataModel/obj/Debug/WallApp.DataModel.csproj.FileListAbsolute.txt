@@ -8,10 +8,10 @@ C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataMod
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\EntityFramework.xml
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.csprojResolveAssemblyReference.cache
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.dll
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.pdb
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.InitMigration.resources
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.csproj.GenerateResource.Cache
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.AddingPostsandCommentstothemodel.resources
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.correctiononposts.resources
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.addingemailvaluetousersschema.resources
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.csproj.GenerateResource.Cache
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.dll
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.pdb

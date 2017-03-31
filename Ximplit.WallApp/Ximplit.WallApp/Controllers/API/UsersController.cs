@@ -9,30 +9,33 @@ using System.Web.Http;
 using WallApp.classes;
 using WallApp.DataModel;
 using Ximplit.WallApp.Services;
-
+using System.Web.Http.Cors;
 namespace Ximplit.WallApp.Controllers.API
 {
     public class UsersController : ApiController
     {
+        [HttpGet]
         public bool Login(string credentials)
         {
             try
             {
-                string[] Credentials = credentials.Split(':');
+                string[] Credentials = credentials.Split('|');
                 string username = Credentials[0];
                 string password = Credentials[1];
                 using (var _context = new WallAppContext())
                 {
-                    return _context.Users.Any(user =>
+                    bool r = _context.Users.Any(user =>
                  user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
                  && user.Password == password
                  );
-                }                
+                    return r;
+                }
             }
             catch (Exception) { return false; }
         }
 
-        public IEnumerable<object> Get()
+        [HttpGet]
+        public IEnumerable<object> GetUsers()
         {
             using (var _context = new WallAppContext())
             {
@@ -45,7 +48,8 @@ namespace Ximplit.WallApp.Controllers.API
                 }).ToList();
             }
         }
-        public object Get(string userName)
+        [HttpGet]
+        public object GetUserByUsername(string userName)
         {
             using (var _context = new WallAppContext())
             {
@@ -59,7 +63,8 @@ namespace Ximplit.WallApp.Controllers.API
             }
         }
         // POST: api/Users
-        public object Post([FromBody] User user)
+        [HttpPost]
+        public object CreateUser([FromBody] User user)
         {
             if (ModelState.IsValid)
             {
@@ -67,14 +72,16 @@ namespace Ximplit.WallApp.Controllers.API
                 using (var _context = new WallAppContext())
                 {
                     _context.Users.Add(user);
+                    _context.SaveChanges();
                 }
                 return HttpStatusCode.OK;
             }
             else return HttpStatusCode.BadRequest;
         }
-        // PUT: api/Users/5
+        // PUT: api/Users/5        
+        [HttpPut]
         [BasicAuth]
-        public object Put([FromBody]User value)
+        public object UpdateUser([FromBody]User value)
         {
             if (value.UserName == Thread.CurrentPrincipal.Identity.Name)
             {
@@ -93,8 +100,9 @@ namespace Ximplit.WallApp.Controllers.API
             return HttpStatusCode.Unauthorized;
         }
         // DELETE: api/Users/5
+        [HttpDelete]
         [BasicAuth]
-        public object Delete(string username)
+        public object DeleteUser(string username)
         {
             using (var context = new WallAppContext())
             {

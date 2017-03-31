@@ -81,11 +81,19 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -253,6 +261,50 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\CSS\animate.css" />
+    <Content Include="Content\CSS\bootstrap.min.css" />
+    <Content Include="Content\CSS\Cards.css" />
+    <Content Include="Content\CSS\Comments.css" />
+    <Content Include="Content\CSS\imgUpload.css" />
+    <Content Include="Content\CSS\Login.css" />
+    <Content Include="Content\CSS\materialize.min.css" />
+    <Content Include="Content\CSS\Plugins\SweetAlert\sweetalert2.min.css" />
+    <Content Include="Content\CSS\RelatedPosts.css" />
+    <Content Include="Content\CSS\SideBar.css" />
+    <Content Include="Content\CSS\style.css" />
+    <Content Include="Content\CSS\UploadButton.css" />
+    <Content Include="Content\DemoFotos\16298862_10208155452712681_3012806415446232154_n.jpg" />
+    <Content Include="Content\DemoFotos\bj.jpg" />
+    <Content Include="Content\DemoFotos\franyy.jpg" />
+    <Content Include="Content\Images\a8y4pNe_460s.jpg" />
+    <Content Include="Content\Images\HTML\Index\9test.jpg" />
+    <Content Include="Content\Images\HTML\Index\fulllogo.png" />
+    <Content Include="Content\Images\HTML\Index\fulllogo.svg" />
+    <Content Include="Content\Images\HTML\Index\fulllogow.png" />
+    <Content Include="Content\Images\HTML\Index\fulllogoww.png" />
+    <Content Include="Content\Images\HTML\Index\home_third_slide.png" />
+    <Content Include="Content\Images\HTML\Index\logo.png" />
+    <Content Include="Content\Images\HTML\Index\logor.png" />
+    <Content Include="Content\Images\HTML\Index\smLogo.png" />
+    <Content Include="Content\Images\HTML\Index\smLogow.png" />
+    <Content Include="Content\Images\HTML\Index\testLogo.png" />
+    <Content Include="Content\Images\HTML\m1.jpg" />
+    <Content Include="Content\Images\HTML\m2.jpg" />
+    <Content Include="Content\Images\HTML\m3.jpg" />
+    <Content Include="Content\Images\m.jpg" />
+    <Content Include="Content\JS\autosize.js" />
+    <Content Include="Content\JS\bootstrap.min.js" />
+    <Content Include="Content\JS\HTML\Feed.js" />
+    <Content Include="Content\JS\HTML\SignUp.js" />
+    <Content Include="Content\JS\HTML\Login.js" />
+    <Content Include="Content\JS\HTML\Main.js" />
+    <Content Include="Content\JS\Index.js" />
+    <Content Include="Content\JS\materialize.min.js" />
+    <Content Include="Content\JS\Plugins\JqueryCookie\jquery.cookie.js" />
+    <Content Include="Content\JS\Plugins\SweetAlert\sweetalert2.min.js" />
+    <Content Include="Content\JS\Post.js" />
+    <Content Include="Content\JS\SideBar.js" />
+    <Content Include="Content\JS\TextBox.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -277,6 +329,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="HTML\Feed.html" />
+    <Content Include="HTML\SignUp.html" />
+    <Content Include="HTML\Login.html" />
+    <Content Include="HTML\main.html" />
+    <Content Include="HTML\Profile.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -289,6 +346,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

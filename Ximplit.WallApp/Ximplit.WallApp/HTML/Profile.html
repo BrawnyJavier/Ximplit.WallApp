@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#f37716;">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#f37716">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f37716">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../Content/CSS/Cards.css">
+    <link rel="stylesheet" type="text/css" href="../Content/CSS/Comments.css">
+    <link rel="stylesheet" type="text/css" href="../Content/CSS/navbar.css">
+    <link href="../Content/CSS/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../Content/CSS/materialize.min.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../Content/CSS/RelatedPosts.css" rel="stylesheet">
+    <link href="../Content/CSS/Tabs.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="font-awesome-animation.min.css">-->
+    <style>
+        .animated {
+            -webkit-transition: height 0.2s;
+            -moz-transition: height 0.2s;
+            transition: height 0.2s;
+        }
+    </style>
+    <title>AyLmaoo - Inicio</title>
+    <!-- Bootstrap core CSS -->
+    <script src="https://use.fontawesome.com/e05faee776.js"></script>
+</head>
+<body style="margin:0;padding:0;">
+    <!--FB pages plugin-->
+    <div id="fb-root"></div>
+    <!--End FB pp.-->
+    <!-- Fixed navbar -->
+    <div class="container-fluid post" style="margin-bottom:60px;">
+        <div class="row">
+           
+
+            <div class="navbar-fixed-top">
+                <nav>
+                    <div class="nav-wrapper">
+                        <img class="img-responsive brand-logo" style="max-height:50px; height:100%; margin-top:10px;margin-left:20px; width:auto;vertical-align:middle; display:inline-block;" src="../Content/Images/HTML/Index/fulllogoww.png" />
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <nav>
+                                    <div class="nav-wrapper">
+                                        <form>
+                                            <div class="input-field">
+                                                <input id="search" type="search" required>
+                                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                                <i class="material-icons">close</i>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </nav>
+                            </li>
+
+                            <li><a href="badges.html">Components</a></li>
+                            <li><a href="collapsible.html">Javascript</a></li>
+                            <li><a href="mobile.html">Mobile</a></li>
+                            <li>
+
+
+                            </li>
+                        </ul>
+                        <ul class="side-nav" id="mobile-demo">
+                            <li>
+                                <div class="userView">
+                                    <div class="background">
+                                        <img src="../Content/Images/HTML/Index/home_third_slide.png">
+                                    </div>
+                                    <a href="#!user"><img class="circle" src="../Content/DemoFotos/bj.jpg"></a>
+                                    <a href="#!name"><span class="white-text name">John Doe</span></a>
+                                    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                                </div>
+                            </li>
+                            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                            <li><a href="#!">Second Link</a></li>
+                            <li><div class="divider"></div></li>
+                            <li><a class="subheader">Subheader</a></li>
+                            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+
+        </div>
+    </div>
+    <style type="text/css">
+        @font-face {
+            font-family: 'comic andy';
+            src: url("../fonts/comic_andy.ttf") format("truetype");
+        }
+
+        p.customfont {
+            font-family: 'comic andy',Tahoma;
+            color: rgb(255, 106, 0);
+            font-size: 100px;
+        }
+    </style>
+    <div class="container-fluid post" style="padding:0;  margin-right: auto;  margin-left: auto; margin-top:-20px;">
+
+        <div class="cardsRelated" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('../Content/Images/HTML/Index/home_third_slide.png');">
+            <div class="card-category">USER RANK </div>
+            <div class="card-description">
+                <h2>@BrawnyJavier</h2>
+                <p>Very cool stuff, useful and smart</p>
+                <i class="pull-left fa fa-camera"></i>
+            </div>
+            <img class="img-responsive card-user avatar img-circle" style="display:block;  max-width:260px;  max-height:125px;  width: auto;  height: auto; vertical-align:middle;" src="/Content/DemoFotos/bj.jpg">
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('ul.tabs').tabs();
+            });
+        </script>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="tabs">
+                    <li style="width:33%" class="tab col s3"><a  href="#test1">Configuracion</a></li>
+                    <li style="width:33%" class="tab col s3"><a   class="active" href="#test2">Aportes</a></li>
+                    <li style="width:33%" class="tab col s3"><a  href="#test4">Mensajes</a></li>
+                </ul>
+            </div>
+            <div id="test1" class="col s12">Test 1</div>
+            <div id="test2" class="col s12">Test 2</div>
+            <div id="test3" class="col s12">Test 3</div>
+            <div id="test4" class="col s12">Test 4</div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../Content/JS/bootstrap.min.js"></script>
+    <script src="../Content/JS/materialize.min.js"></script>
+    <script src="../Content/JS/Index.js"></script>
+    <script type="text/javascript">
+        (sc_adv_out = window.sc_adv_out || []).push({
+            id: "261641",
+            domain: "n.ads1-adnow.com"
+        });
+    </script>
+    <script type="text/javascript" src="//st-n.ads1-adnow.com/js/adv_out.js"></script>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=166629013443783";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <h3 style="color:rgb(255, 106, 0)"> Nuestras P&aacute;ginas </h3>
+                    </div>
+                    <div class="pull-right">
+
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <a href="https://www.facebook.com/TheAyLmaoo/">
+                                <h4 class="centered" style="color:rgb(255, 106, 0)"> AyLmaoo </h4>
+                                <hr style="margin-bottom:10px; margin-top:10px;" />
+                                <img class="img-responsive" src="assets/img/Top/aylmaoo.png" />
+                                <hr style="margin-bottom:10px; margin-top:10px;" />
+                            </a>
+                            <div class="centered">
+                                <div class="fb-like" data-href="https://www.facebook.com/TheAyLmaoo" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="https://www.facebook.com/MemeEsponja.Aylmaoo/">
+                                <h4 class="centered" style="color:rgb(255, 106, 0)"> MemeEsponja </h4>
+                                <hr style="margin-bottom:10px; margin-top:10px;" />
+                                <img class="img-responsive centered" src="assets/img/Top/memesponja.png" />
+                            </a>
+                            <hr style="margin-bottom:10px; margin-top:10px;" />
+                            <div class="centered">
+                                <div class="fb-like" data-href="https://www.facebook.com/MemeEsponja.Aylmaoo/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="https://www.facebook.com/Blackguy.Aylmaoo/">
+                                <h4 class="centered" style="color:rgb(255, 106, 0)"> NegroLifeHacks </h4>
+                                <hr style="margin-bottom:10px; margin-top:10px;" />
+                                <img class="img-responsive" src="assets/img/Top/negrolh.jpg" />
+                                <hr style="margin-bottom:10px; margin-top:10px;" />
+                            </a>
+                            <div class="centered">
+                                <div class="fb-like" data-href="https://www.facebook.com/Blackguy.Aylmaoo/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar TEST -->
+
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="userView">
+                <div class="background">
+                    <img src="../Content/Images/HTML/Index/home_third_slide.png">
+                </div>
+                <a href="#!user"><img class="circle" src="../Content/DemoFotos/bj.jpg"></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons"></i></a>
+
+    <!--END TEST-->
+
+</body>
+</html>
