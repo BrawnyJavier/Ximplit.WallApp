@@ -52,19 +52,24 @@ namespace Ximplit.WallApp.Controllers.API
                 {
                     PostId = o.PostId,
                     content = o.content,
+                    CreationDate = o.CreationDate,
                     author = o.Author.UserName,
                     Comments = _Context.Comments.Where(c => c.Post.PostId == o.PostId).ToList()
                 }).ToList();
+         
             }
         }
-        [BasicAuth] // Only logged in users can call this method
+
         // POST: api/Posts <---                            ROUTE.
+        [BasicAuth] // Only logged in users can call this method
         public object CreatePost([FromBody]Post value)
         {
             if (ModelState.IsValid)
             {
                 using (var _Context = new WallAppContext())
                 {
+                    System.DateTime now = System.DateTime.Today;
+                    value.CreationDate = now;
                     value.Author = _Context.Users.Where(u => u.UserName == Thread.CurrentPrincipal.Identity.Name).FirstOrDefault();
                     _Context.Posts.Add(value);
                     _Context.SaveChanges();
@@ -73,8 +78,8 @@ namespace Ximplit.WallApp.Controllers.API
             }
             else return HttpStatusCode.BadRequest;
         }
-        [BasicAuth]
         // PUT: api/Posts/5
+        [BasicAuth]
         public object UpdatePost([FromBody]PostDTOS value)
         {
             if (ModelState.IsValid)

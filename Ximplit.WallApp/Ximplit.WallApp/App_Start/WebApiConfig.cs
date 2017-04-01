@@ -6,6 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace Ximplit.WallApp
 {
@@ -14,7 +15,7 @@ namespace Ximplit.WallApp
         public static void Register(HttpConfiguration config)
         {
 
-            config.EnableCors();
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             /**/
             var settings = config.Formatters.JsonFormatter.SerializerSettings;
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();

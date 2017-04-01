@@ -26,6 +26,7 @@ namespace WallApp.classes
         [Required]
         public string content { get; set; }
         public User Author { get; set; }
+        public DateTime CreationDate { get; set; }
     }
     public class Comment
     {
@@ -39,5 +40,6 @@ namespace WallApp.classes
         public List<Comment> childComments { get; set; }
         public User CommentAuthor { get; set; }
         public Post Post { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Ximplit.WallApp.Controllers.API
     public class CommentsController : ApiController
     {
         // GET: api/Comments                <- ROUTE
-        public IEnumerable<Comment> Get()
+        public IEnumerable<Comment> GetComments()
         {
             using (var contex = new WallAppContext())
             {
@@ -20,7 +20,7 @@ namespace Ximplit.WallApp.Controllers.API
             }
         }
         // GET: api/Comments/id             <- ROUTE
-        public Comment Get(int id)
+        public Comment GetCommentById(int id)
         {
             using (var contex = new WallAppContext())
             {
@@ -29,7 +29,7 @@ namespace Ximplit.WallApp.Controllers.API
         }
         // POST: api/Comments                   <- ROUTE
         [BasicAuth] // Only logged in users can comment.      
-        public object Post([FromBody]CommentDTO value)
+        public object CreateComment([FromBody]CommentDTO value)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace Ximplit.WallApp.Controllers.API
         }
         // PUT: api/Comments/id                         <- ROUTE
         [BasicAuth] // Only logged in users can update comments.      
-        public object Put([FromBody]CommentDTO value)
+        public object UpdateComment([FromBody]CommentDTO value)
         {
             // Only the author of the comment can make changes to it.
             if (value.AuthorUsename == Thread.CurrentPrincipal.Identity.Name)
@@ -73,7 +73,7 @@ namespace Ximplit.WallApp.Controllers.API
         }
         // DELETE: api/Comments/id                     <- ROUTE
         [BasicAuth] // Only logged in users can delete comments.      
-        public object Delete(int id)
+        public object DeleteComment(int id)
         {
             using (var context = new WallAppContext())
             {

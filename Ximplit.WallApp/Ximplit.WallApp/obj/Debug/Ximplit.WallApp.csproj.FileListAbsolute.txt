@@ -41,9 +41,7 @@ C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\Newtonsoft.Json.dll
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\Owin.dll
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Net.Http.Formatting.dll
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Cors.dll
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Helpers.dll
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Http.Cors.dll
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Http.dll
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Http.Owin.dll
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Http.WebHost.dll
@@ -64,7 +62,6 @@ C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Http.Cors.xml
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\Newtonsoft.Json.xml
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Net.Http.Formatting.xml
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Ximplit.WallApp\bin\System.Web.Helpers.xml

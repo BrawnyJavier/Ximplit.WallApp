@@ -9,7 +9,7 @@ using System.Web.Http;
 using WallApp.classes;
 using WallApp.DataModel;
 using Ximplit.WallApp.Services;
-using System.Web.Http.Cors;
+
 namespace Ximplit.WallApp.Controllers.API
 {
     public class UsersController : ApiController

@@ -20,8 +20,10 @@ $(document).ready(function () {
                 */
                 var Wallap = btoa(username+':'+password);
                 $.cookie("userKey", Wallap, { expires: 2 });
+                    $("#SignOutBtn").show();
                 $("#AjaxLoad").load("/HTML/Feed.html", function (responseTxt, statusTxt, xhr) {
                     FeedLoad();
+                    $("#SignOutBtn").show();
                 });               
             } else {
                 swal(
