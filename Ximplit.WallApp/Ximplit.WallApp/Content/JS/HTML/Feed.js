@@ -46,16 +46,19 @@ function getPosts() {
         type: 'GET',
         dataType: 'json',
         headers: {
-            "Content-Type":"application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (Posts) {
             console.log(Posts);
-            for (var post in Posts)
-            {
+            for (var post in Posts) {
                 //TODO
-                post.creationDate = HaceCuanto(post.creationDate);
+                console.log(post.author);
+                //console.log(post.Object);
+                //var postDate = post.creationDate;
+                //var dateSince = HaceCuanto(postDate.toString());
+                //console.log(dateSince);
+                //post.creationDate = dateSince;
             }
-            console.log(Posts);
             RenderHTML(Posts);
         }
     });
@@ -69,7 +72,7 @@ function RenderHTML(Posts) {
 }
 function HaceCuanto(fecha) {
 
-    var segundos = Math.floor((new Date() - fecha) / 1000);
+    var segundos = Math.floor((new Date() - new Date(fecha)) / 1000);
 
     var interval = Math.floor(segundos / 31536000);
 

@@ -55,8 +55,6 @@
                     <a href="#" title="Send this to friend or post it on your time line">Share</a>
                 </div>
             </div>
-
-
             <div class="fb-status-container fb-border fb-gray-bg">
                 <div class="fb-time-action like-info">
                     <a href="#">Jhon Due,</a>
@@ -65,18 +63,16 @@
                     <a href="#">40 more</a>
                     <span>like this</span>
                 </div>
-
                 <ul class="fb-comments">
-
                     {{#each this.comments}}
                     <li>
                         <div class="cmt-details">
-                            <a href="#">Jhone due</a>
+                            <a href="#">{{this.author}}</a>
                             <span> {{this.content}} </span>
                             <p>40 minutes ago - <a href="#" class="like-link">Like</a></p>
                         </div>
                     </li>
-                    {{/each}}               
+                    {{/each}}
                     <li>
                         <div class="cmt-form">
                             <textarea class="form-control" placeholder="Escribe un comentario..." name=""></textarea>

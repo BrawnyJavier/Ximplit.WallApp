@@ -54,9 +54,18 @@ namespace Ximplit.WallApp.Controllers.API
                     content = o.content,
                     CreationDate = o.CreationDate,
                     author = o.Author.UserName,
-                    Comments = _Context.Comments.Where(c => c.Post.PostId == o.PostId).ToList()
+                    Comments = _Context.Comments.Where(c => c.Post.PostId == o.PostId).
+                    Select(cmnt => new
+                    {
+                        id = cmnt.CommentID,
+                        content = cmnt.Content,
+                        author = cmnt.CommentAuthor.UserName,
+                        parent = cmnt.ParentComment.CommentID,
+                        date = cmnt.CreationDate
+
+                    }).ToList()
                 }).ToList();
-         
+
             }
         }
 

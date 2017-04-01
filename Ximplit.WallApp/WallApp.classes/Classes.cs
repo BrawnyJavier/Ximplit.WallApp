@@ -38,8 +38,11 @@ namespace WallApp.classes
         public Comment ParentComment { get; set; }
         // The list of replies this comment can have
         public List<Comment> childComments { get; set; }
+        [Required]
         public User CommentAuthor { get; set; }
+        [Required]
         public Post Post { get; set; }
+        [Required]
         public DateTime CreationDate { get; set; }
     }
 }
