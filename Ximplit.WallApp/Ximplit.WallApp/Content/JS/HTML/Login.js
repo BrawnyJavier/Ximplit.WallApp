@@ -6,6 +6,8 @@ $(document).ready(function () {
     });
     console.log(url);
     $(document).on("click", "#LoginBtn", function () {
+        $('#LoginBtn').prop('disabled', true);
+        $('#LoginBtn').html(' <i class="fa fa-spin fa-spinner"></i>');
         var username = $('#userName').val();
         var password = $('#passWord').val();
         var credentials = username + '|' + password;

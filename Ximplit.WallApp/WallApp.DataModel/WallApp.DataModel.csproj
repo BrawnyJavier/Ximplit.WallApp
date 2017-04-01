@@ -66,6 +66,14 @@
     <Compile Include="Migrations\201703301532233_adding email value to users schema.Designer.cs">
       <DependentUpon>201703301532233_adding email value to users schema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704010310331_removing titles from posts schema.cs" />
+    <Compile Include="Migrations\201704010310331_removing titles from posts schema.Designer.cs">
+      <DependentUpon>201704010310331_removing titles from posts schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704010406067_added post in comment schema.cs" />
+    <Compile Include="Migrations\201704010406067_added post in comment schema.Designer.cs">
+      <DependentUpon>201704010406067_added post in comment schema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -91,6 +99,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703301532233_adding email value to users schema.resx">
       <DependentUpon>201703301532233_adding email value to users schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704010310331_removing titles from posts schema.resx">
+      <DependentUpon>201704010310331_removing titles from posts schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704010406067_added post in comment schema.resx">
+      <DependentUpon>201704010406067_added post in comment schema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

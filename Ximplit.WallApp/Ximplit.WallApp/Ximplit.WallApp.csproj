@@ -302,6 +302,7 @@
     <Content Include="Content\JS\HTML\Main.js" />
     <Content Include="Content\JS\Index.js" />
     <Content Include="Content\JS\materialize.min.js" />
+    <Content Include="Content\JS\Plugins\HandleBarsJS\handlebars-v4.0.5.js" />
     <Content Include="Content\JS\Plugins\JqueryCookie\jquery.cookie.js" />
     <Content Include="Content\JS\Plugins\SweetAlert\sweetalert2.min.js" />
     <Content Include="Content\JS\Post.js" />

@@ -24,8 +24,6 @@ namespace WallApp.classes
         [Key]
         public int PostId { get; set; }
         [Required]
-        public string title { get; set; }
-        [Required]
         public string content { get; set; }
         public User Author { get; set; }
     }
@@ -40,5 +38,6 @@ namespace WallApp.classes
         // The list of replies this comment can have
         public List<Comment> childComments { get; set; }
         public User CommentAuthor { get; set; }
+        public Post Post { get; set; }
     }
 }

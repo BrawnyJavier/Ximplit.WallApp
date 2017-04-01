@@ -31,7 +31,7 @@ namespace Ximplit.WallApp.Controllers.API
                     return r;
                 }
             }
-            catch (Exception) { return false; }
+            catch (Exception e) { return false; }
         }
 
         [HttpGet]
