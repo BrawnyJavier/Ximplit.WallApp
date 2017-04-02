@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using System.Net.Http;
@@ -24,7 +21,7 @@ namespace Ximplit.WallApp.Services
             // Autorizamos al usuario
             else
             {
-                string authToken = actionContext.Request.Headers.Authorization.Scheme;
+                string authToken = actionContext.Request.Headers.Authorization.Parameter;
                 string decodedAuthToken = Encoding.UTF8.GetString(Convert.FromBase64String(authToken));
                 string[] credentials = decodedAuthToken.Split(':');
                 string Username = credentials[0];

@@ -8,15 +8,6 @@ namespace WallApp.classes
 {
     public class PostDTOS
     {
-        /*
-         PostId = o.PostId,
-                    content = o.content,
-                    CreationDate = o.CreationDate,
-                    CreationDateFormated = "",
-                    author = o.Author.UserName,
-                    comments = _Context.Comments.Where(x => x.Post.PostId == o.PostId).
-             */
-
         public string CreationDateFormated { get; set; }
         public DateTime CreationDate { get; set; }
         public int PostId { get; set; }
@@ -31,6 +22,7 @@ namespace WallApp.classes
         public string Content { get; set; }
         public int ParentCommentID { get; set; }
         public string AuthorUsename { get; set; }
+        public int PostId { get; set; }
     }
     public class UserDTO
     {

@@ -36,7 +36,7 @@
 </div>
 <script id="PostsTemplate" type="text/x-handlebars-template">
     {{#each this}}
-    <div class="panel">
+    <div class="panel" id="{{this.postId}}">
         <div class="panel-body">
             <div class="fb-user-details">
                 <h3><a href="#" class="#">{{this.authorUserName}}</a></h3>

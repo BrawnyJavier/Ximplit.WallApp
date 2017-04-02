@@ -1,19 +1,20 @@
 ﻿function FeedLoad() {
     $(document).ready(function () {
+        var credentials;
         // Check if the user is logged in reading the userKey cookie
         var LoggedIn = $.cookie("userKey") ? true : false;
         // If is not, block the textarea used to compose posts
         if (!LoggedIn) $("#PostContent").prop("disabled", true);
+        else credentials = $.cookie("userKey");
         getPosts();
         // Event to handle when user clicks the Post button
         $(document).on("click", "#PostBtn", function () {
-            var commentContent = $("#PostContent").val();
-
-            if (commentContent.length > 0) {
+            var PostContent = $("#PostContent").val();
+            if (PostContent.length > 0) {
                 $('#PostBtn').prop('disabled', true);
                 $('#PostBtn').html(' <i class="fa fa-spin fa-spinner"></i>');
                 var PostModel = {
-                    content: commentContent
+                    content: PostContent
                 }
                 $.ajax({
                     url: '/api/Posts/CreatePost',
@@ -21,7 +22,7 @@
                     data: PostModel,
                     dataType: 'json',
                     headers: {
-                        'Authorization': $.cookie("userKey")
+                        'Authorization': 'Basic ' + credentials
                     },
                     success: function (data, textStatus, jqXHR) {
                         getPosts();
@@ -34,24 +35,51 @@
                         'Ha ocurrido un error.',
                         'warning'
                       );
-                        console.log('Authorization' + $.cookie("userKey"));
                     }
                 });
             }
         });
+        // Event fired when an user clicks the button to post a comment
         $(document).on("click", ".publicCmntBtn", function () {
-            console.log(this);
-        });
-        $('.cmt-form').submit(function (e) {
-            swal('commn');
-            console.log(e);
-
+            // Gets the id of the post
+            var PostId = $(this).parents().eq(4).prop("id");
+            console.log($(this).parents().eq(4).prop("id"));
+            // Gets the comment content
+            var CommentContent = $(this).parent().find('.CommentsTxtArea').val();
+            console.log($(this).parent().find('.CommentsTxtArea').val());
+            var CommentModel = {
+                Content: CommentContent,
+                PostId: PostId
+            };
+            var userCredentials = $.cookie("userKey");
+            console.log(userCredentials);
+            $.ajax({
+                url: '/api/Comments/CreateComment',
+                type: "POST",
+                data: CommentModel,
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Basic ' + credentials
+                },
+                success: function (data, textStatus, jqXHR) {
+                    getPosts();
+                    this.prop('disabled', false);
+                    this.html('POST');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    swal(
+                    'Ooops!!!',
+                    'Ha ocurrido un error.',
+                    'warning'
+                  );
+                }
+            });
         });
     });
 }
 function getPosts() {
     var url = '/api/Posts/GetPostAndComments';
-        $.ajax({
+    $.ajax({
         url: url,
         type: 'GET',
         dataType: 'json',
@@ -59,15 +87,12 @@ function getPosts() {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (Posts) {
-            console.log(Posts);
-            for (var post in Posts) {
-                console.log(post['author']);
-            }
             RenderHTML(Posts);
         }
     });
 }
 function RenderHTML(Posts) {
+    // Gets the Handlebars template
     var RawTemplate = $('#PostsTemplate').html();
     var CompiledTemplate = Handlebars.compile(RawTemplate);
     var ourRenderedHTML = CompiledTemplate(Posts);

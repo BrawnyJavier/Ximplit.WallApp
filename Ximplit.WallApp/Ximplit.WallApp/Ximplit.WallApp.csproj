@@ -246,9 +246,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Services\BasicAuthAttribute.cs" />
-    <Compile Include="Services\IXimplitWallAppIdentityService.cs" />
     <Compile Include="Services\WallAppSecurity.cs" />
-    <Compile Include="Services\XimplitWallAppIdentityService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

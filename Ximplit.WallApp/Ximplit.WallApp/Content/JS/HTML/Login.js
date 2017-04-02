@@ -12,11 +12,11 @@ $(document).ready(function () {
         var password = $('#passWord').val();
         var credentials = username + '|' + password;
         console.log(url + credentials);
-        //alert('d');
         $.getJSON(url + credentials, function (result) {
             if (result == true) {
                 /* If the user exist in the database, we store his credentials 
                 in a cookie to persist the data */
+                if ($.cookie("userKey")) $.removeCookie("userKey");
                 var Wallap = btoa(username + ':' + password);
                 $.cookie("userKey", Wallap, { expires: 2 });
                 $("#SignOutBtn").show();
@@ -25,7 +25,6 @@ $(document).ready(function () {
                     $("#SignOutBtn").show();
                 });
             } else {
-                // swal('¡Credenciales incorrectas!', '¿Estás seguro que ese es tu usuario y esa es tu contraseña?', 'warning');
                 swal({
                     title: '¡Credenciales incorrectas!',
                     text: "¿Estás seguro que ese es tu usuario y esa es tu contraseña?",
@@ -54,13 +53,9 @@ $(document).ready(function () {
                                   'warning'
                                   );
                             }
-
                         }
                     });
-
-
-
-                })
+                });
                 $('#LoginBtn').prop('disabled', false);
                 $('#LoginBtn').html('INICIAR SESIÓN');
             }
@@ -72,8 +67,6 @@ $(document).ready(function () {
         });
     });
     $(document).on("click", "#createAccount", function () {
-        $("#AjaxLoad").load("/HTML/SignUp.html", function (responseTxt, statusTxt, xhr) {
-
-        });
+        $("#AjaxLoad").load("/HTML/SignUp.html");
     });
 });

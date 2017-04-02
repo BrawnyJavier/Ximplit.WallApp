@@ -45,7 +45,9 @@ namespace Ximplit.WallApp.Controllers.API
                         ParentComment = context.Comments.Where(c =>
                                     c.CommentID == value.ParentCommentID).FirstOrDefault(),
                         Content = value.Content,
-                        CreationDate = DateTime.Now
+                        CreationDate = DateTime.Now,
+                        Post = context.Posts.Where(p=> p.PostId==value.PostId).FirstOrDefault()
+
                        
                     };
                     context.Comments.Add(Comment);
