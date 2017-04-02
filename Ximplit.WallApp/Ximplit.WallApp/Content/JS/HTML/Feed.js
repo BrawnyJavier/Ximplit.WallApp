@@ -38,20 +38,20 @@
                     }
                 });
             }
-
         });
         $(document).on("click", ".publicCmntBtn", function () {
             console.log(this);
         });
+        $('.cmt-form').submit(function (e) {
+            swal('commn');
+            console.log(e);
 
-
-
+        });
     });
 }
 function getPosts() {
     var url = '/api/Posts/GetPostAndComments';
-    //$.getJSON(url, function (result) { console.log(result); });
-    $.ajax({
+        $.ajax({
         url: url,
         type: 'GET',
         dataType: 'json',
@@ -60,7 +60,6 @@ function getPosts() {
         },
         success: function (Posts) {
             console.log(Posts);
-
             for (var post in Posts) {
                 console.log(post['author']);
             }
@@ -74,31 +73,4 @@ function RenderHTML(Posts) {
     var ourRenderedHTML = CompiledTemplate(Posts);
     var PostsLoad = $('#PostsLoad');
     PostsLoad.html(ourRenderedHTML);
-}
-function HaceCuanto(fecha) {
-
-    var segundos = Math.floor((new Date() - new Date(fecha)) / 1000);
-
-    var interval = Math.floor(segundos / 31536000);
-
-    if (interval > 1) {
-        return interval + " años";
-    }
-    interval = Math.floor(segundos / 2592000);
-    if (interval > 1) {
-        return interval + " meses";
-    }
-    interval = Math.floor(segundos / 86400);
-    if (interval > 1) {
-        return interval + " días";
-    }
-    interval = Math.floor(segundos / 3600);
-    if (interval > 1) {
-        return interval + " horas";
-    }
-    interval = Math.floor(segundos / 60);
-    if (interval > 1) {
-        return interval + " minutos";
-    }
-    return Math.floor(segundos) + " segundos";
 }

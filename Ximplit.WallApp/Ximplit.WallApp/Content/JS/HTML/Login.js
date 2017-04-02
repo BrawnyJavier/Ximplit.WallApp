@@ -25,7 +25,42 @@ $(document).ready(function () {
                     $("#SignOutBtn").show();
                 });
             } else {
-                swal('¡Credenciales incorrectas!', '¿Estás seguro que ese es tu usuario y esa es tu contraseña?', 'warning');
+                // swal('¡Credenciales incorrectas!', '¿Estás seguro que ese es tu usuario y esa es tu contraseña?', 'warning');
+                swal({
+                    title: '¡Credenciales incorrectas!',
+                    text: "¿Estás seguro que ese es tu usuario y esa es tu contraseña?",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Enviar contraseña por email'
+                }).then(function () {
+                    var url = '/api/Users/sendPassword?username=' + username;
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (data, textStatus, xhr) {
+                            if (data == true) {
+                                swal(
+                                  'Credenciales enviadas.',
+                                  'Revisa tu email, te hemos enviado tus datos para que puedas iniciar sesión.',
+                                  'success'
+                                );
+                            } else {
+                                swal(
+                                    'Hmm, al parecer este usuario no existe',
+                                  'Por favor, intentalo una vez más.',
+                                  'warning'
+                                  );
+                            }
+
+                        }
+                    });
+
+
+
+                })
                 $('#LoginBtn').prop('disabled', false);
                 $('#LoginBtn').html('INICIAR SESIÓN');
             }

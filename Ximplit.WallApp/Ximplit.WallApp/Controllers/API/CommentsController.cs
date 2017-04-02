@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading;
@@ -43,7 +44,9 @@ namespace Ximplit.WallApp.Controllers.API
 
                         ParentComment = context.Comments.Where(c =>
                                     c.CommentID == value.ParentCommentID).FirstOrDefault(),
-                        Content = value.Content
+                        Content = value.Content,
+                        CreationDate = DateTime.Now
+                       
                     };
                     context.Comments.Add(Comment);
                     context.SaveChanges();

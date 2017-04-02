@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Miscellaneous
 {
     public class EmailSender
@@ -22,6 +17,44 @@ namespace Miscellaneous
             };
             SmtpClient.EnableSsl = true;
             SmtpClient.Send(MailMessage);
+        }
+       
+    }
+    public class Formaters
+    {
+        public string TimelineDateFormat(DateTime dateToFormat)
+        {
+         
+            TimeSpan difference = DateTime.Now - dateToFormat;
+            var segundos = difference.TotalSeconds;
+            var interval = Math.Floor(segundos / 31536000);
+
+            if (interval > 1)
+            {
+                return interval + " años";
+            }
+            interval = Math.Floor(segundos / 2592000);
+            if (interval > 1)
+            {
+                return interval + " meses";
+            }
+            interval = Math.Floor(segundos / 86400);
+            if (interval > 1)
+            {
+                return interval + " días";
+            }
+            interval = Math.Floor(segundos / 3600);
+            if (interval > 1)
+            {
+                return interval + " horas";
+            }
+            interval = Math.Floor(segundos / 60);
+            if (interval > 1)
+            {
+                return interval + " minutos";
+            }
+            return Math.Floor(segundos) + " segundos";
+            
         }
     }
 }

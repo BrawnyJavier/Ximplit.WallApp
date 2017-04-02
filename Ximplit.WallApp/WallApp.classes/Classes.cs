@@ -48,7 +48,7 @@ namespace WallApp.classes
     public class WallAppStoredEmails
     {
         [Key]
-        public int EmailId { get; set; }
+        public string EmailCode { get; set; }
         public string Description { get; set; }
         [Required]
         public string Body { get; set; }

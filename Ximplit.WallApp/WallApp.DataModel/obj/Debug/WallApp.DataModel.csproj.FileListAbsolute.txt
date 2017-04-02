@@ -22,3 +22,4 @@ C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataMod
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.CreateStoredemailsobjandpopulatethefirstrecord.resources
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.CreateStoredemailsobj.resources
 C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.PopulateStoredEmails.resources
+C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\WallApp.DataModel\obj\Debug\WallApp.DataModel.Migrations.populatingStoredEmails.resources

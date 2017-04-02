@@ -94,6 +94,10 @@
     <Compile Include="Migrations\201704020133574_Populate  Stored Emails.Designer.cs">
       <DependentUpon>201704020133574_Populate  Stored Emails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704021135029_populatingStoredEmails.cs" />
+    <Compile Include="Migrations\201704021135029_populatingStoredEmails.Designer.cs">
+      <DependentUpon>201704021135029_populatingStoredEmails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -140,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704020133574_Populate  Stored Emails.resx">
       <DependentUpon>201704020133574_Populate  Stored Emails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704021135029_populatingStoredEmails.resx">
+      <DependentUpon>201704021135029_populatingStoredEmails.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

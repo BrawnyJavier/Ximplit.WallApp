@@ -16,16 +16,17 @@
 
         <div class="panel profile-info">
             <form>
-                <textarea id="PostContent" class="form-control input-lg p-text-area" rows="2" placeholder="¿Qué estás pensando?"></textarea>
+                <textarea id="PostContent" class="form-control input-lg p-text-area" rows="2" style="color:rgb(51, 51, 51)" placeholder="¿Qué estás pensando?"></textarea>
             </form>
+            <button id="PostBtn" type="button" class="btn btn-info pull-right red-bg">Post</button>
             <footer class="panel-footer">
-                <button id="PostBtn" type="button" class="btn btn-info pull-right">Post</button>
-                <ul class="nav nav-pills">
+            
+                <!--<ul class="nav nav-pills">
                     <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
                     <li><a href="#"><i class="fa fa-camera"></i></a></li>
                     <li><a href="#"><i class="fa fa-film"></i></a></li>
                     <li><a href="#"><i class="fa fa-microphone"></i></a></li>
-                </ul>
+                </ul>-->
             </footer>
         </div>
         <hr />
@@ -38,8 +39,8 @@
     <div class="panel">
         <div class="panel-body">
             <div class="fb-user-details">
-                <h3><a href="#" class="#">{{this.author}}</a></h3>
-                <p>{{this.creationDate}}</p>
+                <h3><a href="#" class="#">{{this.authorUserName}}</a></h3>
+                <p>Hace {{this.creationDateFormated}}</p>
             </div>
             <div class="clearfix"></div>
             <p class="fb-user-status">
@@ -74,9 +75,9 @@
                     </li>
                     {{/each}}
                     <li>
-                        <div class="cmt-form">
-                            <textarea class="form-control CommentsTxtArea" placeholder="Escribe un comentario..." name=""></textarea>
-                        </div> <button id="PostBtn" type="button" class="btn btn-info pull-right publicCmntBtn">Post</button>
+                        <form class="cmt-form">
+                            <input class="form-control CommentsTxtArea" placeholder="Escribe un comentario..." name="">
+                        </form> <button id="PostBtn" type="button" class="btn btn-info pull-right publicCmntBtn">Post</button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>

@@ -20,7 +20,6 @@ namespace Ximplit.WallApp.Controllers.API
                 return _Context.Posts.ToList();
             }
         }
-
         // GET: api/Posts/5
         public Post GetPostById(int id)
         {
@@ -48,26 +47,33 @@ namespace Ximplit.WallApp.Controllers.API
         {
             using (var _Context = new WallAppContext())
             {
-                return _Context.Posts.Select(o => new
+                var returnData = _Context.Posts.Select(o => new PostDTOS
                 {
                     PostId = o.PostId,
                     content = o.content,
                     CreationDate = o.CreationDate,
-                    author = o.Author.UserName,
-                    comments = _Context.Comments.Where(x => x.Post.PostId == o.PostId).
-                    Select(
-                        c => new CommentDTO
-                        {
-                            AuthorUsename = c.CommentAuthor.UserName,
-                            CommentID = c.CommentID,
-                            Content = c.Content
-                        }).ToList()
-                }).OrderByDescending(w => w.CreationDate)
-                .ToList();
+                    CreationDateFormated = "",
+                    AuthorUserName = o.Author.UserName,
+                    comments = _Context.Comments.Where(x => x.Post.PostId == o.PostId)
+                    .Select(
+                          c => new CommentDTO
+                          {
+                              AuthorUsename = c.CommentAuthor.UserName,
+                              CommentID = c.CommentID,
+                              Content = c.Content
+                          }).ToList()
+                                }).OrderByDescending(w => w.CreationDate)
+                    .ToList();
+                var DateFormatter = new Miscellaneous.Formaters();
+                foreach (var value in returnData)
+                {
+                    value.CreationDateFormated = DateFormatter.TimelineDateFormat(value.CreationDate);
+                }
+
+                return returnData;
                 //.OrderByDescending(a => a.CreationDate)
             }
         }
-
         // POST: api/Posts <---                            ROUTE.
         [BasicAuth] // Only logged in users can call this method
         public object CreatePost([FromBody]Post value)
@@ -76,7 +82,7 @@ namespace Ximplit.WallApp.Controllers.API
             {
                 using (var _Context = new WallAppContext())
                 {
-                    System.DateTime now = System.DateTime.Today;
+                    System.DateTime now = System.DateTime.Now;
                     value.CreationDate = now;
                     value.Author = _Context.Users.Where(u => u.UserName == Thread.CurrentPrincipal.Identity.Name).FirstOrDefault();
                     _Context.Posts.Add(value);

@@ -1,5 +1,0 @@
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Miscellaneous\bin\Debug\Miscellaneous.dll
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Miscellaneous\bin\Debug\Miscellaneous.pdb
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Miscellaneous\obj\Debug\Miscellaneous.csprojResolveAssemblyReference.cache
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Miscellaneous\obj\Debug\Miscellaneous.dll
-C:\Users\Javier\Documents\GitHub\Ximplit.WallApp\Ximplit.WallApp\Miscellaneous\obj\Debug\Miscellaneous.pdb

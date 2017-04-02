@@ -17,7 +17,13 @@ namespace Ximplit.WallApp
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-           
+
+        }
+        void Session_Start(object sender, EventArgs e)
+        {
+            // Cuando inicie, redirigir a la pagina principal de carga
+            Response.Redirect("~/HTML/main.html");
+
         }
     }
 }

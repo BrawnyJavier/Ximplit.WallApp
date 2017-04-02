@@ -1,10 +1,8 @@
 ﻿using Miscellaneous;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading;
 using System.Web.Http;
 using WallApp.classes;
@@ -34,7 +32,24 @@ namespace Ximplit.WallApp.Controllers.API
             }
             catch (Exception) { return false; }
         }
-
+        [HttpGet]
+        public bool sendPassword(string username)
+        {
+            using (var context = new WallAppContext())
+            {
+                User user = context.Users.Where(u => u.UserName == username).FirstOrDefault();
+                if (user != null)
+                {
+                    var emailHandler = new EmailSender();
+                    var Email = context.StoredEmailsTemplates.Where(email => email.EmailCode == "PASSWORD").FirstOrDefault();
+                    string EmailSubject = Email.Subject;
+                    string EmailBody = Email.Body + " Usuario: " + user.UserName + " Contraseña: " + user.Password;
+                    emailHandler.SendEmail(EmailBody, EmailSubject, user.Email);
+                    return true;
+                }
+                return false;
+            }
+        }
         [HttpGet]
         public IEnumerable<object> GetUsers()
         {
@@ -75,9 +90,9 @@ namespace Ximplit.WallApp.Controllers.API
                     _context.Users.Add(user);
                     _context.SaveChanges();
                     var emailHandler = new EmailSender();
-                    string EmailBody = _context.StoredEmailsTemplates.Where(email => email.EmailId == 1).FirstOrDefault().Body;
-                    string EmailSubject = _context.StoredEmailsTemplates.Where(email => email.EmailId == 1).FirstOrDefault().Subject+" "+user.Name+" "+user.LastName+"!";
-
+                    var Email = _context.StoredEmailsTemplates.Where(email => email.EmailCode == "WELCOME").FirstOrDefault();
+                    string EmailBody = Email.Body;
+                    string EmailSubject = Email.Subject + " " + user.Name + " " + user.LastName + "!";
                     emailHandler.SendEmail(EmailBody, EmailSubject, user.Email);
                 }
                 return HttpStatusCode.OK;
