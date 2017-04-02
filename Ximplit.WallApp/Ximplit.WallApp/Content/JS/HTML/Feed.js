@@ -7,31 +7,41 @@
         getPosts();
         // Event to handle when user clicks the Post button
         $(document).on("click", "#PostBtn", function () {
-            var PostModel = {
-                content: $("#PostContent").val()
-            }
-            $.ajax({
-                url: '/api/Posts/CreatePost',
-                type: "POST",
-                data: PostModel,
-                dataType: 'json',
-                headers: {
-                    'Authorization': $.cookie("userKey")
-                },
-                success: function (data, textStatus, jqXHR) {
-                    swal('success');
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    swal(
-                    'Ooops!!!',
-                    'Ha ocurrido un error.',
-                    'warning'
-                  );
+            var commentContent = $("#PostContent").val();
+
+            if (commentContent.length > 0) {
+                $('#PostBtn').prop('disabled', true);
+                $('#PostBtn').html(' <i class="fa fa-spin fa-spinner"></i>');
+                var PostModel = {
+                    content: commentContent
                 }
-            });
+                $.ajax({
+                    url: '/api/Posts/CreatePost',
+                    type: "POST",
+                    data: PostModel,
+                    dataType: 'json',
+                    headers: {
+                        'Authorization': $.cookie("userKey")
+                    },
+                    success: function (data, textStatus, jqXHR) {
+                        getPosts();
+                        $('#PostBtn').prop('disabled', false);
+                        $('#PostBtn').html('POST');
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        swal(
+                        'Ooops!!!',
+                        'Ha ocurrido un error.',
+                        'warning'
+                      );
+                        console.log('Authorization' + $.cookie("userKey"));
+                    }
+                });
+            }
+
         });
-        $(document).on("click", "#PublishEntryBtn", function () {
-            alert("inside");
+        $(document).on("click", ".publicCmntBtn", function () {
+            console.log(this);
         });
 
 
@@ -50,14 +60,9 @@ function getPosts() {
         },
         success: function (Posts) {
             console.log(Posts);
+
             for (var post in Posts) {
-                //TODO
-                console.log(post.author);
-                //console.log(post.Object);
-                //var postDate = post.creationDate;
-                //var dateSince = HaceCuanto(postDate.toString());
-                //console.log(dateSince);
-                //post.creationDate = dateSince;
+                console.log(post['author']);
             }
             RenderHTML(Posts);
         }

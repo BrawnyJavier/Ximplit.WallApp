@@ -30,7 +30,9 @@ $(document).ready(function () {
             }
         });
     });
-    $(document).on("click", "#Submit", function () {
+    $('#loginform').submit(function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
         if ($('#passWord').val() == $('#RepeatpassWord').val()) {
             var UserModel = {
                 UserName: $('#userName').val(),
@@ -49,6 +51,7 @@ $(document).ready(function () {
                     $.cookie("userKey", Wallap, { expires: 2 });
                     $("#AjaxLoad").load("/HTML/Feed.html", function (responseTxt, statusTxt, xhr) {
                         FeedLoad();
+                        $("#SignOutBtn").show();
                     });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -59,7 +62,38 @@ $(document).ready(function () {
             //    FeedLoad();
             //});
         }
+             
     });
+    //$(document).on("click", "#Submit", function () {
+    //    if ($('#passWord').val() == $('#RepeatpassWord').val()) {
+    //        var UserModel = {
+    //            UserName: $('#userName').val(),
+    //            Name: $('#NombreInput').val(),
+    //            LastName: $('#ApellidoINput').val(),
+    //            Password: $('#passWord').val(),
+    //            Email: $('#emailInput').val()
+    //        }
+    //        console.log(UserModel);
+    //        $.ajax({
+    //            url: '/api/Users/CreateUser',
+    //            type: "POST",
+    //            data: UserModel,
+    //            success: function (data, textStatus, jqXHR) {
+    //                var Wallap = btoa(UserModel.UserName + ':' + UserModel.Password);
+    //                $.cookie("userKey", Wallap, { expires: 2 });
+    //                $("#AjaxLoad").load("/HTML/Feed.html", function (responseTxt, statusTxt, xhr) {
+    //                    FeedLoad();
+    //                });
+    //            },
+    //            error: function (jqXHR, textStatus, errorThrown) {
+    //                swal('error');
+    //            }
+    //        });
+    //        //$("#AjaxLoad").load("/HTML/Feed.html", function (responseTxt, statusTxt, xhr) {
+    //        //    FeedLoad();
+    //        //});
+    //    }
+    //});
     $(document).on("click", "#ReturnBtn", function () {
         $("#AjaxLoad").load("/HTML/Login.html", function (responseTxt, statusTxt, xhr) {
 

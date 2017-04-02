@@ -45,4 +45,13 @@ namespace WallApp.classes
         [Required]
         public DateTime CreationDate { get; set; }
     }
+    public class WallAppStoredEmails
+    {
+        [Key]
+        public int EmailId { get; set; }
+        public string Description { get; set; }
+        [Required]
+        public string Body { get; set; }
+        public string Subject { get; set; }
+    }
 }

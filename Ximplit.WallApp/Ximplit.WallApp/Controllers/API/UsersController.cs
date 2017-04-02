@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Miscellaneous;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Ximplit.WallApp.Controllers.API
                     return r;
                 }
             }
-            catch (Exception e) { return false; }
+            catch (Exception) { return false; }
         }
 
         [HttpGet]
@@ -73,6 +74,11 @@ namespace Ximplit.WallApp.Controllers.API
                 {
                     _context.Users.Add(user);
                     _context.SaveChanges();
+                    var emailHandler = new EmailSender();
+                    string EmailBody = _context.StoredEmailsTemplates.Where(email => email.EmailId == 1).FirstOrDefault().Body;
+                    string EmailSubject = _context.StoredEmailsTemplates.Where(email => email.EmailId == 1).FirstOrDefault().Subject+" "+user.Name+" "+user.LastName+"!";
+
+                    emailHandler.SendEmail(EmailBody, EmailSubject, user.Email);
                 }
                 return HttpStatusCode.OK;
             }

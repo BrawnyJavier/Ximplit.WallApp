@@ -39,7 +39,7 @@
         <div class="panel-body">
             <div class="fb-user-details">
                 <h3><a href="#" class="#">{{this.author}}</a></h3>
-                <p>7 minutes ago near Alaska, USA</p>
+                <p>{{this.creationDate}}</p>
             </div>
             <div class="clearfix"></div>
             <p class="fb-user-status">
@@ -67,7 +67,7 @@
                     {{#each this.comments}}
                     <li>
                         <div class="cmt-details">
-                            <a href="#">{{this.author}}</a>
+                            <a href="#">{{this.authorUsename}}</a>
                             <span> {{this.content}} </span>
                             <p>40 minutes ago - <a href="#" class="like-link">Like</a></p>
                         </div>
@@ -75,8 +75,8 @@
                     {{/each}}
                     <li>
                         <div class="cmt-form">
-                            <textarea class="form-control" placeholder="Escribe un comentario..." name=""></textarea>
-                        </div>
+                            <textarea class="form-control CommentsTxtArea" placeholder="Escribe un comentario..." name=""></textarea>
+                        </div> <button id="PostBtn" type="button" class="btn btn-info pull-right publicCmntBtn">Post</button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -84,10 +84,7 @@
         </div>
     </div>
     <hr />
-
     {{/each}}
-
-
 </script>
 <script type="text/javascript" src="../Content/JS/Plugins/HandleBarsJS/handlebars-v4.0.5.js"></script>
 <script type="text/javascript" src="../Content/JS/HTML/Feed.js"></script>

@@ -16,21 +16,18 @@ $(document).ready(function () {
         $.getJSON(url + credentials, function (result) {
             if (result == true) {
                 /* If the user exist in the database, we store his credentials 
-                in a cookie to persist the data 
-                */
-                var Wallap = btoa(username+':'+password);
+                in a cookie to persist the data */
+                var Wallap = btoa(username + ':' + password);
                 $.cookie("userKey", Wallap, { expires: 2 });
-                    $("#SignOutBtn").show();
+                $("#SignOutBtn").show();
                 $("#AjaxLoad").load("/HTML/Feed.html", function (responseTxt, statusTxt, xhr) {
                     FeedLoad();
                     $("#SignOutBtn").show();
-                });               
+                });
             } else {
-                swal(
-                      'Credenciales incorrectas.',
-                      '¿Estás seguro que esa es tu contraseña?',
-                      'warning'
-                    );
+                swal('¡Credenciales incorrectas!', '¿Estás seguro que ese es tu usuario y esa es tu contraseña?', 'warning');
+                $('#LoginBtn').prop('disabled', false);
+                $('#LoginBtn').html('INICIAR SESIÓN');
             }
         });
     });
@@ -41,7 +38,7 @@ $(document).ready(function () {
     });
     $(document).on("click", "#createAccount", function () {
         $("#AjaxLoad").load("/HTML/SignUp.html", function (responseTxt, statusTxt, xhr) {
-        
+
         });
     });
 });

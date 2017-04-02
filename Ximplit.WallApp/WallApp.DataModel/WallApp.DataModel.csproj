@@ -82,6 +82,18 @@
     <Compile Include="Migrations\201704012034080_Req_Comments_Update.Designer.cs">
       <DependentUpon>201704012034080_Req_Comments_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704020128154_Create Stored emails obj and populate the first record.cs" />
+    <Compile Include="Migrations\201704020128154_Create Stored emails obj and populate the first record.Designer.cs">
+      <DependentUpon>201704020128154_Create Stored emails obj and populate the first record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704020132543_Create Stored emails obj.cs" />
+    <Compile Include="Migrations\201704020132543_Create Stored emails obj.Designer.cs">
+      <DependentUpon>201704020132543_Create Stored emails obj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704020133574_Populate  Stored Emails.cs" />
+    <Compile Include="Migrations\201704020133574_Populate  Stored Emails.Designer.cs">
+      <DependentUpon>201704020133574_Populate  Stored Emails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -119,6 +131,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704012034080_Req_Comments_Update.resx">
       <DependentUpon>201704012034080_Req_Comments_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704020128154_Create Stored emails obj and populate the first record.resx">
+      <DependentUpon>201704020128154_Create Stored emails obj and populate the first record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704020132543_Create Stored emails obj.resx">
+      <DependentUpon>201704020132543_Create Stored emails obj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704020133574_Populate  Stored Emails.resx">
+      <DependentUpon>201704020133574_Populate  Stored Emails.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
