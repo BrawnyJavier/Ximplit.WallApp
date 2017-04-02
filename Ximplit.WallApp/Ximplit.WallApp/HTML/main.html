@@ -1,12 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#f37716;">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#f37716">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#f37716">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +15,6 @@
     <link href="../Content/CSS/materialize.min.css" rel="stylesheet">
     <link href="../Content/CSS/Plugins/SweetAlert/sweetalert2.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--<link rel="stylesheet" href="font-awesome-animation.min.css">-->
     <style>
         .animated {
             -webkit-transition: height 0.2s;
@@ -34,10 +27,7 @@
     <script src="https://use.fontawesome.com/e05faee776.js"></script>
 </head>
 <body style="margin:0;padding:0">
-    <!--FB pages plugin-->
-    <div id="fb-root"></div>
-    <!--End FB pp.-->
-    <!-- Fixed navbar -->
+
     <div class="container-fluid post" style="margin-bottom:60px;">
         <div class="row">
             <div class="navbar-fixed-top">
@@ -47,13 +37,14 @@
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
                             <li>
-                                <a id="SignOutBtn">
-                                    <div>
-                                        <i class="fa fa-sign-out fa-2x"></i> 
-                                    </div>
-                                </a>
+                                <div id="SignOutBtn" style="margin-right:15px;cursor:pointer">
+                                    <i class="fa fa-sign-out fa-2x"></i>
+                                </div>
                             </li>
                             <li>
+                                <div id="AccountBtn" style="margin-right:25px; cursor:pointer">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </div>
                             </li>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
@@ -67,10 +58,9 @@
                                     <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
                                 </div>
                             </li>
-                            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                            <li><a href="#!">Second Link</a></li>
+                            <li><a href="#!"><i class="fa fa-user"></i>Mi Perfil</a></li>
                             <li><div class="divider"></div></li>
-                            <li><a class="subheader">Subheader</a></li>
+                            <li><a class="subheader" href="http://ximplit.com/"><i class="material-icons">cloud</i> Ximplit </a></li>
                             <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
                         </ul>
                     </div>
@@ -88,59 +78,5 @@
     <script src="../Content/JS/HTML/Main.js"></script>
     <script src="../Content/JS/Plugins/JqueryCookie/jquery.cookie.js"></script>
     <script src="../Content/JS/Plugins/SweetAlert/sweetalert2.min.js"></script>
-    <!--<div class="modal fade" id="mymodal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title">
-                        <h3 style="color:rgb(255, 106, 0)"> Nuestras P&aacute;ginas </h3>
-                    </div>
-                    <div class="pull-right">
-
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <a href="https://www.facebook.com/TheAyLmaoo/">
-                                <h4 class="centered" style="color:rgb(255, 106, 0)"> AyLmaoo </h4>
-                                <hr style="margin-bottom:10px; margin-top:10px;" />
-                                <img class="img-responsive" src="assets/img/Top/aylmaoo.png" />
-                                <hr style="margin-bottom:10px; margin-top:10px;" />
-                            </a>
-                            <div class="centered">
-                                <div class="fb-like" data-href="https://www.facebook.com/TheAyLmaoo" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="https://www.facebook.com/MemeEsponja.Aylmaoo/">
-                                <h4 class="centered" style="color:rgb(255, 106, 0)"> MemeEsponja </h4>
-                                <hr style="margin-bottom:10px; margin-top:10px;" />
-                                <img class="img-responsive centered" src="assets/img/Top/memesponja.png" />
-                            </a>
-                            <hr style="margin-bottom:10px; margin-top:10px;" />
-                            <div class="centered">
-                                <div class="fb-like" data-href="https://www.facebook.com/MemeEsponja.Aylmaoo/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="https://www.facebook.com/Blackguy.Aylmaoo/">
-                                <h4 class="centered" style="color:rgb(255, 106, 0)"> NegroLifeHacks </h4>
-                                <hr style="margin-bottom:10px; margin-top:10px;" />
-                                <img class="img-responsive" src="assets/img/Top/negrolh.jpg" />
-                                <hr style="margin-bottom:10px; margin-top:10px;" />
-                            </a>
-                            <div class="centered">
-                                <div class="fb-like" data-href="https://www.facebook.com/Blackguy.Aylmaoo/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>-->
 </body>
 </html>

@@ -15,6 +15,8 @@ namespace WallApp.classes
         public string content { get; set; }
         public string AuthorUserName { get; set; }
         public List<CommentDTO> comments { get; set; }
+        public double likesCount { get; set; }
+        public bool LikedByUser { get; set; }
     }
     public class CommentDTO
     {

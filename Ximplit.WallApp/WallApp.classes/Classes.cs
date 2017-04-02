@@ -54,4 +54,22 @@ namespace WallApp.classes
         public string Body { get; set; }
         public string Subject { get; set; }
     }
+    public class PostsLikes
+    {
+        // Set the user and posts id as primary keys so 
+        // one user can only like a post once.
+        [Key, Column(Order = 0)]
+        public string UserName { get; set; }
+        [Key, Column(Order = 1)]
+        public int LikedPostID { get; set; }
+    }
+    public class CommentsLikes
+    {
+        // Set the user and comments id as primary keys so 
+        // one user can only like a comment once.
+        [Key, Column(Order = 0)]
+        public string UserName { get; set; }
+        [Key, Column(Order = 1)]
+        public int LikedCommentID { get; set; }
+    }
 }

@@ -76,6 +76,34 @@ namespace Ximplit.WallApp.Controllers.API
             }
             else return HttpStatusCode.Unauthorized;
         }
+
+        [BasicAuth]
+        public void LikeComment(int CommentID)
+        {
+            using (var contex = new WallAppContext())
+            {
+                contex.CommentsLikes.Add(new CommentsLikes
+                {
+                    LikedCommentID = CommentID,
+                    UserName = Thread.CurrentPrincipal.Identity.Name
+                });
+                contex.SaveChanges();
+            }
+        }
+        [BasicAuth]
+        public void UnlikeComment(int CommentID)
+        {
+            using (var contex = new WallAppContext())
+            {
+                var CommentLikeInDatabase = contex.CommentsLikes
+                .Where(pl => pl.LikedCommentID == CommentID
+                       && pl.UserName == Thread.CurrentPrincipal.Identity.Name)
+                .FirstOrDefault();
+                contex.CommentsLikes.Remove(CommentLikeInDatabase);
+                contex.SaveChanges();
+            }
+        }
+
         // DELETE: api/Comments/id                     <- ROUTE
         [BasicAuth] // Only logged in users can delete comments.      
         public object DeleteComment(int id)

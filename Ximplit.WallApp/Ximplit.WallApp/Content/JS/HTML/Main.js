@@ -5,14 +5,21 @@
     if (LoggedIn) {
         $("#SignOutBtn").show();
         $("#AjaxLoad").load("/HTML/Feed.html", function () { FeedLoad() });
-    } 
+    }
     else {
         $("#SignOutBtn").hide();
-        $("#AjaxLoad").load("/HTML/Login.html");        
+        $("#AjaxLoad").load("/HTML/Login.html");
     }
     $(document).on("click", "#SignOutBtn", function () {
         $.removeCookie("userKey");
         $("#SignOutBtn").hide();
         $("#AjaxLoad").load("/HTML/Login.html");
+    });
+    $(document).on("click", "#AccountBtn", function () {
+        var IsLoggedIn = $.cookie("userKey") ? true : false;
+        if (IsLoggedIn) $("#AjaxLoad").load("/HTML/Profile.html");
+        else {
+            $("#AjaxLoad").load("/HTML/Login.html");
+        }
     });
 });

@@ -54,6 +54,9 @@ namespace Ximplit.WallApp.Controllers.API
                     CreationDate = o.CreationDate,
                     CreationDateFormated = "",
                     AuthorUserName = o.Author.UserName,
+                    // Gets how many likes the current post has
+                    likesCount = _Context.PostsLikes.Where(P => P.LikedPostID == o.PostId).Count(),
+                    // Select the comments that were made for this post
                     comments = _Context.Comments.Where(x => x.Post.PostId == o.PostId)
                     .Select(
                           c => new CommentDTO
@@ -62,18 +65,57 @@ namespace Ximplit.WallApp.Controllers.API
                               CommentID = c.CommentID,
                               Content = c.Content
                           }).ToList()
-                                }).OrderByDescending(w => w.CreationDate)
+                }).OrderByDescending(w => w.CreationDate)
                     .ToList();
+                // This is to format the date/time of the post, done in server 
+                // side to keep the integrity of the data to be presented
                 var DateFormatter = new Miscellaneous.Formaters();
                 foreach (var value in returnData)
                 {
                     value.CreationDateFormated = DateFormatter.TimelineDateFormat(value.CreationDate);
                 }
-
                 return returnData;
-                //.OrderByDescending(a => a.CreationDate)
             }
         }
+
+        [BasicAuth]
+        [HttpGet]
+        public object GetPostAndCommentsForLoggedIn()
+        {
+            using (var _Context = new WallAppContext())
+            {
+                var returnData = _Context.Posts.Select(o => new PostDTOS
+                {
+                    PostId = o.PostId,
+                    content = o.content,
+                    CreationDate = o.CreationDate,
+                    CreationDateFormated = "",
+                    LikedByUser = _Context.PostsLikes.Any(PostLike => PostLike.UserName == Thread.CurrentPrincipal.Identity.Name && PostLike.LikedPostID == o.PostId),
+                    AuthorUserName = o.Author.UserName,
+                    // Gets how many likes the current post has
+                    likesCount = _Context.PostsLikes.Where(P => P.LikedPostID == o.PostId).Count(),
+                    // Select the comments that were made for this post
+                    comments = _Context.Comments.Where(x => x.Post.PostId == o.PostId)
+                    .Select(
+                          c => new CommentDTO
+                          {
+                              AuthorUsename = c.CommentAuthor.UserName,
+                              CommentID = c.CommentID,
+                              Content = c.Content
+                          }).ToList()
+                }).OrderByDescending(w => w.CreationDate)
+                    .ToList();
+                // This is to format the date/time of the post, done in server 
+                // side to keep the integrity of the data to be presented
+                var DateFormatter = new Miscellaneous.Formaters();
+                foreach (var value in returnData)
+                {
+                    value.CreationDateFormated = DateFormatter.TimelineDateFormat(value.CreationDate);
+                }
+                return returnData;
+            }
+        }
+
         // POST: api/Posts <---                            ROUTE.
         [BasicAuth] // Only logged in users can call this method
         public object CreatePost([FromBody]Post value)
@@ -129,6 +171,33 @@ namespace Ximplit.WallApp.Controllers.API
                 {
                     return HttpStatusCode.Unauthorized;
                 }
+            }
+        }
+        [BasicAuth]
+        public void LikePost(int postID)
+        {
+            using (var contex = new WallAppContext())
+            {
+                contex.PostsLikes.Add(new PostsLikes
+                {
+
+                    LikedPostID = postID,
+                    UserName = Thread.CurrentPrincipal.Identity.Name
+                });
+                contex.SaveChanges();
+            }
+        }
+        [BasicAuth]
+        public void UnLikePost(int postID)
+        {
+            using (var contex = new WallAppContext())
+            {
+                var PostLikeInDatabase = contex.PostsLikes
+                .Where(pl => pl.LikedPostID == postID
+                       && pl.UserName == Thread.CurrentPrincipal.Identity.Name)
+                .FirstOrDefault();
+                contex.PostsLikes.Remove(PostLikeInDatabase);
+                contex.SaveChanges();
             }
         }
     }

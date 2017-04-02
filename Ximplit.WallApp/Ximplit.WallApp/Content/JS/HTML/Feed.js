@@ -1,12 +1,16 @@
 ﻿function FeedLoad() {
     $(document).ready(function () {
+        getPosts();
         var credentials;
         // Check if the user is logged in reading the userKey cookie
         var LoggedIn = $.cookie("userKey") ? true : false;
         // If is not, block the textarea used to compose posts
-        if (!LoggedIn) $("#PostContent").prop("disabled", true);
+        if (!LoggedIn) {
+            $("#PostContent").prop("disabled", true);
+            $(".publicCmntBtn").prop("disabled", true);
+            $(".CommentsTxtArea").attr('disabled', true);
+        }
         else credentials = $.cookie("userKey");
-        getPosts();
         // Event to handle when user clicks the Post button
         $(document).on("click", "#PostBtn", function () {
             var PostContent = $("#PostContent").val();
@@ -39,20 +43,43 @@
                 });
             }
         });
+        $(document).on("click", ".PostLikeLink", function () {
+            // Gets the id of the post
+            var PostId = $(this).parents().eq(3).prop("id");
+            $.ajax({
+                url: '/api/Posts/LikePost?postID=' + PostId,
+                type: "POST",
+                headers: {
+                    'Authorization': 'Basic ' + credentials
+                },
+                success: function (data, textStatus, jqXHR) {
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    swal(
+                    'Ooops!!!',
+                    'Ha ocurrido un error.',
+                    'warning'
+                  );
+                }
+            });
+            $(this).html("Unlike");
+            swal('unlik');
+        });
         // Event fired when an user clicks the button to post a comment
         $(document).on("click", ".publicCmntBtn", function () {
             // Gets the id of the post
             var PostId = $(this).parents().eq(4).prop("id");
-            console.log($(this).parents().eq(4).prop("id"));
+            //console.log($(this).parents().eq(4).prop("id"));
             // Gets the comment content
             var CommentContent = $(this).parent().find('.CommentsTxtArea').val();
-            console.log($(this).parent().find('.CommentsTxtArea').val());
+            //console.log($(this).parent().find('.CommentsTxtArea').val());
             var CommentModel = {
                 Content: CommentContent,
                 PostId: PostId
             };
-            var userCredentials = $.cookie("userKey");
-            console.log(userCredentials);
+            //var userCredentials = $.cookie("userKey");
+            //console.log(userCredentials);
             $.ajax({
                 url: '/api/Comments/CreateComment',
                 type: "POST",
@@ -78,18 +105,39 @@
     });
 }
 function getPosts() {
-    var url = '/api/Posts/GetPostAndComments';
-    $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: 'json',
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        success: function (Posts) {
-            RenderHTML(Posts);
-        }
-    });
+    var Credentials = $.cookie("userKey");
+    if (Credentials) {
+        $.ajax({
+            url: '/api/Posts/GetPostAndCommentsForLoggedIn',
+            type: "GET",         
+            headers: {
+                'Authorization': 'Basic ' + Credentials
+            },
+            success: function (data, textStatus, jqXHR) {
+                       RenderHTML(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                swal(
+                'Ooops!!!',
+                'Ha ocurrido un error.',
+                'warning'
+              );
+            }
+        });
+    } else {
+        var url = '/api/Posts/GetPostAndComments';
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            success: function (Posts) {
+                RenderHTML(Posts);
+            }
+        });
+    }
 }
 function RenderHTML(Posts) {
     // Gets the Handlebars template

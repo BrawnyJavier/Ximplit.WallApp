@@ -8,5 +8,7 @@ namespace WallApp.DataModel
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<WallAppStoredEmails> StoredEmailsTemplates { get; set; }
+        public DbSet<PostsLikes> PostsLikes { get; set; }
+        public DbSet<CommentsLikes> CommentsLikes { get; set; }
     }
 }

@@ -264,9 +264,7 @@
     <Content Include="Content\CSS\SideBar.css" />
     <Content Include="Content\CSS\style.css" />
     <Content Include="Content\CSS\UploadButton.css" />
-    <Content Include="Content\DemoFotos\16298862_10208155452712681_3012806415446232154_n.jpg" />
-    <Content Include="Content\DemoFotos\bj.jpg" />
-    <Content Include="Content\DemoFotos\franyy.jpg" />
+    <Content Include="Content\DemoFotos\facebook-default-no-profile-pic.jpg" />
     <Content Include="Content\Images\a8y4pNe_460s.jpg" />
     <Content Include="Content\Images\HTML\Feed\cover.png" />
     <Content Include="Content\Images\HTML\Index\9test.jpg" />
@@ -287,6 +285,7 @@
     <Content Include="Content\JS\autosize.js" />
     <Content Include="Content\JS\bootstrap.min.js" />
     <Content Include="Content\JS\HTML\Feed.js" />
+    <Content Include="Content\JS\HTML\profile.js" />
     <Content Include="Content\JS\HTML\SignUp.js" />
     <Content Include="Content\JS\HTML\Login.js" />
     <Content Include="Content\JS\HTML\Main.js" />

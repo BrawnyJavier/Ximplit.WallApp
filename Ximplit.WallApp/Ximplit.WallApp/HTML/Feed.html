@@ -18,15 +18,11 @@
             <form>
                 <textarea id="PostContent" class="form-control input-lg p-text-area" rows="2" style="color:rgb(51, 51, 51)" placeholder="¿Qué estás pensando?"></textarea>
             </form>
-            <button id="PostBtn" type="button" class="btn btn-info pull-right red-bg">Post</button>
             <footer class="panel-footer">
-            
-                <!--<ul class="nav nav-pills">
-                    <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
+                <button id="PostBtn" type="button" class="btn btn-info pull-right red-bg">Post</button>
+                <ul class="nav nav-pills">
                     <li><a href="#"><i class="fa fa-camera"></i></a></li>
-                    <li><a href="#"><i class="fa fa-film"></i></a></li>
-                    <li><a href="#"><i class="fa fa-microphone"></i></a></li>
-                </ul>-->
+                </ul>
             </footer>
         </div>
         <hr />
@@ -34,6 +30,11 @@
         <div id="PostsLoad"></div>
     </div>
 </div>
+<style>
+    .unlike{
+        color:rgb(63, 67, 133);
+    }
+</style>
 <script id="PostsTemplate" type="text/x-handlebars-template">
     {{#each this}}
     <div class="panel" id="{{this.postId}}">
@@ -46,10 +47,12 @@
             <p class="fb-user-status">
                 {{this.content}}
             </p>
-
             <div class="fb-status-container fb-border">
                 <div class="fb-time-action">
-                    <a href="#" title="Like this">Like</a>
+                    {{#if this.likedByUser}}
+                    <a class="PostLikeLink" style="cursor:pointer" title="Like this">Unlike</a>
+                    {{/if}}
+                                  
                     <span>-</span>
                     <a href="#" title="Leave a comment">Comments</a>
                     <span>-</span>
@@ -58,11 +61,11 @@
             </div>
             <div class="fb-status-container fb-border fb-gray-bg">
                 <div class="fb-time-action like-info">
-                    <a href="#">Jhon Due,</a>
-                    <a href="#">Danieal Kalion</a>
-                    <span>and</span>
-                    <a href="#">40 more</a>
-                    <span>like this</span>
+                    <!--<a href="#">Jhon Due,</a>
+                    <a href="#">Danieal Kalion</a>-->
+                    <span>a</span>
+                    <a href="#">{{this.likesCount}} </a>
+                    <span>personas les gusta esto</span>
                 </div>
                 <ul class="fb-comments">
                     {{#each this.comments}}
@@ -70,14 +73,15 @@
                         <div class="cmt-details">
                             <a href="#">{{this.authorUsename}}</a>
                             <span> {{this.content}} </span>
-                            <p>40 minutes ago - <a href="#" class="like-link">Like</a></p>
+                            <br />
+                           <a href="#" class="like-link">Like</a>
                         </div>
                     </li>
                     {{/each}}
                     <li>
                         <form class="cmt-form">
                             <input class="form-control CommentsTxtArea" placeholder="Escribe un comentario..." name="">
-                        </form> <button id="PostBtn" type="button" class="btn btn-info pull-right publicCmntBtn">Post</button>
+                        </form> <button type="button" class="btn btn-info pull-right publicCmntBtn">Post</button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -89,3 +93,4 @@
 </script>
 <script type="text/javascript" src="../Content/JS/Plugins/HandleBarsJS/handlebars-v4.0.5.js"></script>
 <script type="text/javascript" src="../Content/JS/HTML/Feed.js"></script>
+<script src="../Content/JS/Plugins/JqueryCookie/jquery.cookie.js"></script>
