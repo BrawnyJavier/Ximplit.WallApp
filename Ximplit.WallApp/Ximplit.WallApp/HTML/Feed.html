@@ -31,8 +31,8 @@
     </div>
 </div>
 <style>
-    .unlike{
-        color:rgb(63, 67, 133);
+    .unlike {
+        color: rgb(63, 67, 133);
     }
 </style>
 <script id="PostsTemplate" type="text/x-handlebars-template">
@@ -50,9 +50,11 @@
             <div class="fb-status-container fb-border">
                 <div class="fb-time-action">
                     {{#if this.likedByUser}}
-                    <a class="PostLikeLink" style="cursor:pointer" title="Like this">Unlike</a>
+                    <a class="PostUnlikeLink" style="cursor:pointer" title="Like this">Unlike</a>
+                    {{else}}
+                    <a class="PostLikeLink" style="cursor:pointer" title="Like this">Like</a>
                     {{/if}}
-                                  
+
                     <span>-</span>
                     <a href="#" title="Leave a comment">Comments</a>
                     <span>-</span>
@@ -74,7 +76,7 @@
                             <a href="#">{{this.authorUsename}}</a>
                             <span> {{this.content}} </span>
                             <br />
-                           <a href="#" class="like-link">Like</a>
+                            <a href="#" class="like-link">Like</a>
                         </div>
                     </li>
                     {{/each}}

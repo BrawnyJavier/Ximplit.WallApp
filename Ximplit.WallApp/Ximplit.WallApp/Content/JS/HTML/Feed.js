@@ -43,6 +43,7 @@
                 });
             }
         });
+        // Handle the event thrown when user 'Likes' a post
         $(document).on("click", ".PostLikeLink", function () {
             // Gets the id of the post
             var PostId = $(this).parents().eq(3).prop("id");
@@ -63,8 +64,27 @@
                   );
                 }
             });
-            $(this).html("Unlike");
-            swal('unlik');
+            getPosts();
+        });
+        // Handle the event thrown when user 'unlikes' a post
+        $(document).on("click", ".PostUnlikeLink", function () {
+            // Gets the id of the post
+            var PostId = $(this).parents().eq(3).prop("id");
+            $.ajax({
+                url: '/api/Posts/UnLikePost?postID=' + PostId,
+                type: "POST",
+                headers: {
+                    'Authorization': 'Basic ' + credentials
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    swal(
+                    'Ooops!!!',
+                    'Ha ocurrido un error.',
+                    'warning'
+                  );
+                }
+            });
+            getPosts();
         });
         // Event fired when an user clicks the button to post a comment
         $(document).on("click", ".publicCmntBtn", function () {
@@ -109,12 +129,12 @@ function getPosts() {
     if (Credentials) {
         $.ajax({
             url: '/api/Posts/GetPostAndCommentsForLoggedIn',
-            type: "GET",         
+            type: "GET",
             headers: {
                 'Authorization': 'Basic ' + Credentials
             },
             success: function (data, textStatus, jqXHR) {
-                       RenderHTML(data);
+                RenderHTML(data);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 swal(
