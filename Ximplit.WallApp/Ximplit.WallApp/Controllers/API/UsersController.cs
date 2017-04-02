@@ -60,7 +60,8 @@ namespace Ximplit.WallApp.Controllers.API
                 {
                     LastName = s.LastName,
                     Name = s.Name,
-                    UserName = s.UserName
+                    UserName = s.UserName,
+                    Email = s.Email
                 }).ToList();
             }
         }
@@ -74,7 +75,8 @@ namespace Ximplit.WallApp.Controllers.API
                     {
                         LastName = s.LastName,
                         Name = s.Name,
-                        UserName = s.UserName
+                        UserName = s.UserName,
+                        Email = s.Email
                     }).FirstOrDefault();
             }
         }
@@ -99,11 +101,11 @@ namespace Ximplit.WallApp.Controllers.API
             else return HttpStatusCode.BadRequest;
         }
         // PUT: api/Users/5        
-        [HttpPut]
+  
         [BasicAuth]
         public object UpdateUser([FromBody]User value)
         {
-            if (value.UserName == Thread.CurrentPrincipal.Identity.Name)
+            if (value.UserName.Equals(Thread.CurrentPrincipal.Identity.Name, StringComparison.OrdinalIgnoreCase))
             {
                 using (var contex = new WallAppContext())
                 {

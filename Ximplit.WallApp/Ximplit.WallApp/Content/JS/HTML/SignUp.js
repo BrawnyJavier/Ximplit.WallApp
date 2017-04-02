@@ -56,7 +56,6 @@ $(document).ready(function () {
                 }
             });
         }
-
     });
     $(document).on("click", "#ReturnBtn", function () {
         $("#AjaxLoad").load("/HTML/Login.html", function (responseTxt, statusTxt, xhr) {

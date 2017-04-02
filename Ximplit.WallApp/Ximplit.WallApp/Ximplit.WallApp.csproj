@@ -265,23 +265,9 @@
     <Content Include="Content\CSS\style.css" />
     <Content Include="Content\CSS\UploadButton.css" />
     <Content Include="Content\DemoFotos\facebook-default-no-profile-pic.jpg" />
-    <Content Include="Content\Images\a8y4pNe_460s.jpg" />
     <Content Include="Content\Images\HTML\Feed\cover.png" />
-    <Content Include="Content\Images\HTML\Index\9test.jpg" />
-    <Content Include="Content\Images\HTML\Index\fulllogo.png" />
-    <Content Include="Content\Images\HTML\Index\fulllogo.svg" />
-    <Content Include="Content\Images\HTML\Index\fulllogow.png" />
-    <Content Include="Content\Images\HTML\Index\fulllogoww.png" />
     <Content Include="Content\Images\HTML\Index\home_third_slide.png" />
     <Content Include="Content\Images\HTML\Index\logo.png" />
-    <Content Include="Content\Images\HTML\Index\logor.png" />
-    <Content Include="Content\Images\HTML\Index\smLogo.png" />
-    <Content Include="Content\Images\HTML\Index\smLogow.png" />
-    <Content Include="Content\Images\HTML\Index\testLogo.png" />
-    <Content Include="Content\Images\HTML\m1.jpg" />
-    <Content Include="Content\Images\HTML\m2.jpg" />
-    <Content Include="Content\Images\HTML\m3.jpg" />
-    <Content Include="Content\Images\m.jpg" />
     <Content Include="Content\JS\autosize.js" />
     <Content Include="Content\JS\bootstrap.min.js" />
     <Content Include="Content\JS\HTML\Feed.js" />
@@ -294,7 +280,6 @@
     <Content Include="Content\JS\Plugins\HandleBarsJS\handlebars-v4.0.5.js" />
     <Content Include="Content\JS\Plugins\JqueryCookie\jquery.cookie.js" />
     <Content Include="Content\JS\Plugins\SweetAlert\sweetalert2.min.js" />
-    <Content Include="Content\JS\Post.js" />
     <Content Include="Content\JS\SideBar.js" />
     <Content Include="Content\JS\TextBox.js" />
     <Content Include="favicon.ico" />
@@ -338,7 +323,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
