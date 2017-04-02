@@ -84,7 +84,6 @@ namespace Ximplit.WallApp.Controllers.API
         {
             if (ModelState.IsValid)
             {
-                // User user = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(val.ToString());
                 using (var _context = new WallAppContext())
                 {
                     _context.Users.Add(user);

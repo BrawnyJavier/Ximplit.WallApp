@@ -40,7 +40,7 @@
     <div class="panel" id="{{this.postId}}">
         <div class="panel-body">
             <div class="fb-user-details">
-                <h3><a href="#" class="#">{{this.authorUserName}}</a></h3>
+                <h3><a href="#" class="#">@{{this.authorUserName}}</a></h3>
                 <p>Hace {{this.creationDateFormated}}</p>
             </div>
             <div class="clearfix"></div>
@@ -54,11 +54,8 @@
                     {{else}}
                     <a class="PostLikeLink" style="cursor:pointer" title="Like this">Like</a>
                     {{/if}}
-
                     <span>-</span>
-                    <a href="#" title="Leave a comment">Comments</a>
-                    <span>-</span>
-                    <a href="#" title="Send this to friend or post it on your time line">Share</a>
+                    <a class="CommentLink" title="Leave a comment">Comment</a>                    
                 </div>
             </div>
             <div class="fb-status-container fb-border fb-gray-bg">
@@ -73,7 +70,7 @@
                     {{#each this.comments}}
                     <li>
                         <div class="cmt-details">
-                            <a href="#">{{this.authorUsename}}</a>
+                            <a href="#">@{{this.authorUsename}}</a>
                             <span> {{this.content}} </span>
                             <br />
                             <a href="#" class="like-link">Like</a>

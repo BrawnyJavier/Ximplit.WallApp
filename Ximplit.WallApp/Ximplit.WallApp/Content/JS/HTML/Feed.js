@@ -83,23 +83,33 @@
                     'warning'
                   );
                 }
+            }).done(function (results) {
+                getPosts();
             });
-            getPosts();
         });
-        // Event fired when an user clicks the button to post a comment
-        $(document).on("click", ".publicCmntBtn", function () {
+        $(document).on("click", ".CommentLink", function () {
             // Gets the id of the post
             var PostId = $(this).parents().eq(4).prop("id");
-            //console.log($(this).parents().eq(4).prop("id"));
+            // Gets the comment content
+            var CommentContent = $(this).parent().find('.CommentsTxtArea');
+            CommentContent.hide();
+            console.log(CommentContent);
+        });
+
+        // Event fired when an user clicks the button to post a comment
+        $(document).on("click", ".publicCmntBtn", function () {
+
+            // Gets the id of the post
+            var PostId = $(this).parents().eq(4).prop("id");
+
             // Gets the comment content
             var CommentContent = $(this).parent().find('.CommentsTxtArea').val();
-            //console.log($(this).parent().find('.CommentsTxtArea').val());
+
             var CommentModel = {
                 Content: CommentContent,
                 PostId: PostId
             };
-            //var userCredentials = $.cookie("userKey");
-            //console.log(userCredentials);
+
             $.ajax({
                 url: '/api/Comments/CreateComment',
                 type: "POST",
